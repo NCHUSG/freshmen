@@ -1,0 +1,89 @@
+{% extends "roll_call/base/base.html"  %}
+{% load staticfiles %}
+{% block body %}
+<!-- Page Contents 功能簡介 -->
+<div class="pusher">
+	<div class="ui inverted masthead center aligned segment">
+		{% include "roll_call/base/left_bar.html" %}
+		{% block entryInfo%}
+		<div class="ui text container">
+		  <h1 class="ui inverted header">
+		    興鮮人
+		  </h1>
+		  <h2>讓你以全新的方式認識中興大學</h2>
+		  <div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>
+		</div>
+		{% endblock %}
+	</div>
+	{% block entryContent %}
+	<!-- 這裡放 子網頁連結-->
+	<div class="ui grid">
+		<div class="two wide column"></div>
+		<div class="twelve wide column">
+			<div class="ui three special stackable cards" style="margin:1px auto;width: 85%;">
+				<div class="card stackable">
+					<div class="blurring dimmable image">
+						<div class="ui inverted dimmer">
+							<div class="content">
+								<div class="center" style="font-size: 1.5em;">
+									<div class="ui inverted clock_black" style="font-size: 1em;line-height:1.5em;color:black;">
+										想整理自己想要的課卻
+										<br>嫌學校系統操作不便嗎，
+										<br>選課小幫手，
+										<br>幫助各位打場漂亮的勝仗。
+									</div>
+								</div>
+							</div>
+						</div>
+						<img src="{% static 'roll_call/img/calendar.svg' %}">
+					</div>
+					<div class="content">
+						<a class="header text_center" href="">出席狀況</a>
+					</div>
+				</div>
+				<div class="card stackable">
+					<div class="blurring dimmable image">
+						<div class="ui inverted dimmer">
+							<div class="content">
+								<div class="center">
+									<div class="ui primary clock_black" style="font-size: 1.5em;line-height:1.5em;color:black;">面對琳瑯滿目的課程，
+										<br>毫無頭緒，無從下手嗎?
+									</div>
+								</div>
+							</div>
+						</div>
+						<img src="{% static 'roll_call/img/shopping-cart.svg' %}">
+					</div>
+					<div class="content">
+						<a class="header text_center" href="">學員狀況</a>
+					</div>
+				</div>
+				<div class="card stackable">
+					<div class="blurring dimmable image">
+						<div class="ui inverted dimmer">
+							<div class="content">
+								<div class="center">
+									<div class="ui primary clock_black" style="font-size: 1.5em;line-height:1.5em;color:black;">面對琳瑯滿目的課程，
+										<br>毫無頭緒，無從下手嗎?
+									</div>
+								</div>
+							</div>
+						</div>
+						<img src="{% static 'roll_call/img/restaurant.svg' %}">
+					</div>
+					<div class="content">
+						<a class="header text_center" href="http://yahoo.com.tw">意見回應</a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div align="center">
+					<img style="visibility:hidden;" class="ui Mini image" src="{% static 'roll_call/GitHub-52.png' %}">
+				</div>
+			</div>
+		</div>
+		<div class="two wide column"></div>		
+	</div>
+	{% endblock %}
+</div>
+{% endblock %}
