@@ -8,8 +8,12 @@
     <a class="item" href="">學員狀況</a>
     <a class="item" href="">意見回應</a>
     <div class="right item">
-      <a class="ui inverted button" href="{% url 'login' %}">Log in</a>
-      <a class="ui inverted button" href="{% url 'logout' %}">Sign Up</a>
+      {% if request.user.is_authenticated %}
+        <h4 class="ui inverted">HI {{request.user}}</h4>
+      {% else %}
+        <a class="ui inverted button" href="{% url 'customer:login' %}">Log in</a>
+      {% endif %}
+      <a class="ui inverted button" href="{% url 'customer:logout' %}">Sign Up</a>
     </div>
   </div>
 </div>
