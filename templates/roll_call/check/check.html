@@ -1,5 +1,10 @@
 {% extends "roll_call/base/base.html"  %}
 {% load staticfiles %}
-{% block body %}
-
+{% block content %}
+<h1>{{team}}小隊的點名頁面</h1>
+{% for s in RCStuL %}
+	<tr>
+		<td>{{s.studentID}}</td>
+	</tr>
+{% endfor %}
 {% endblock %}

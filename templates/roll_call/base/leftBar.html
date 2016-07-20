@@ -1,13 +1,14 @@
 <!-- Sidebar Menu -->
 <div class="ui vertical inverted sidebar menu">
   <a class="active item">Home</a>
-  <a class="item" href="">出席狀況</a>
+  <a class="item" href="{% url 'roll_call:check' key=0 %}">出席狀況</a>
   <a class="item" href="">學員狀況</a>
-  <a class="item">意見回應</a>
+  <a class="item" href="">意見回應</a>
+  <a class="item" href="{% url 'roll_call:assignTeam' %}">分配小隊</a>
   {% if request.user.is_authenticated %}
-    <h4 class="item">HI {{request.user}}</h4>
+    <a class="ui inverted button">HI {{request.user}}</h4>
+    <a class="ui inverted button" href="{% url 'customer:logout' %}">Log out</a>
   {% else %}
-    <a class="ui inverted button" href="{% url 'customer:login' %}">Log in</a>
+    <a class="ui inverted button" href="{% url 'customer:login' %}">Log in/Sign Up</a>
   {% endif %}
-  <a class="item" href="{% url 'roll_call:logout' %}">Signup</a>
 </div>
