@@ -1,10 +1,72 @@
 {% extends "roll_call/base/base.html"  %}
 {% load staticfiles %}
+{% block eachStyle %}
+	<link rel="stylesheet" type="text/css" href="{% static 'roll_call/toastr/toastr.css' %}">
+{% endblock %}
 {% block content %}
-<h1>{{team}}小隊的點名頁面</h1>
-{% for s in RCStuL %}
-	<tr>
-		<td>{{s.studentID}}</td>
-	</tr>
-{% endfor %}
+	<div class="ui floating dropdown labeled search icon button">
+	  <i class="world icon"></i>
+	  <span class="text">{{team}}小隊的點名頁面</span>
+	  <div class="menu">
+		{% for t in teamRange %}
+		<a class="item" href="/roll_call/check/{{t}}">
+		  <img class="ui avatar image" src="{% static 'roll_call/nchu_sg.jpg'%}">
+		  {{ t }}
+		</a>
+		{% endfor %}
+	  </div>
+	</div>
+
+	{% block form %}
+		
+	{% endblock %}
+
+	<table class="ui very basic collapsing celled table">
+	  <thead>
+		<tr><th>小隊員</th>
+		<th>出席狀況</th>
+		<th>出席狀況</th>
+		<th>出席狀況</th>
+		<th>出席狀況</th>
+	  </tr></thead>
+	  <tbody>
+		{% for i in RCStuL %}
+			<tr>
+			  {% for j in i.rcrecord_set.all|dictsort:"RC_order"  %}
+			  	  <!--要用foreignKey取到連結的model，|dictsort:"RC_order"是排序的filter，會用dict裏面的key來排序，key名稱放後面的字串-->
+				  {% if forloop.first %}
+					  <td>
+						<h4 class="ui image header">
+						  <img src="{% static 'roll_call/img/worker.svg' %}" class="ui mini rounded image">
+						  <div class="content">
+							姓名
+							<div class="sub header">{{i.studentID}}</div>
+						  </div>
+						</h4>
+					  </td>
+					  <td>
+						{{j.RC_order}}{{j.present}}
+					  </td>
+				  {% else %}
+					  <td>
+						{{j.RC_order}}{{j.present}}
+					  </td>
+				  {% endif %}
+			  {% endfor %}
+			</tr>
+		{% endfor %}
+	  </tbody>
+	</table>
+
+{% endblock %}
+{% block jsblock %}
+	<script src="{% static 'roll_call/js/assignTeam/dropdown.js' %}"></script>
+	<script src="{% static 'roll_call/toastr/toastr.js' %}"></script>
+	<script type="text/javascript">
+	  $(document).ready(function(){
+		$('#submit').click(function(){
+		  toastr.info("提交中請稍候", {timeOut: 2500});
+		})
+	  })
+	</script>
 {% endblock %}

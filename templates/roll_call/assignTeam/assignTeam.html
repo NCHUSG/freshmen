@@ -1,5 +1,8 @@
 {% extends "roll_call/base/base.html"  %}
 {% load staticfiles %}
+{% block eachStyle %}
+<link rel="stylesheet" type="text/css" href="{% static 'roll_call/toastr/toastr.css' %}">
+{% endblock %}
 {% block content %}
 <h1>分配小隊~</h1>
 
@@ -8,9 +11,10 @@
   <table class="ui inverted green table">
     <thead>
       <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Option</th>
+      <th>學號</th>
+      <th>姓名</th>
+      <th>性別</th>
+      <th>小隊</th>
   	  </tr>
     </thead>
     <tbody>
@@ -18,34 +22,55 @@
       <tr>
         <td>{{s}}</td>
         <td>{{s.major}}</td>
+
+        <td>
+          <div class="ui fluid search selection dropdown">
+            <input type="hidden" name="{{s}}_g">
+            <!--{s}_g指的是該小隊員的性別-->
+            <i class="dropdown icon"></i>
+            <div class="default text">選擇性別</div>
+            <div class="menu">
+              <div class="item" data-value="M"><img src="{% static 'roll_call/img/worker.svg' %}">男</div>
+              <div class="item" data-value="F"><img src="{% static 'roll_call/img/woman.svg' %}"> 女</div>
+            </div>
+          </div> 
+        </td>
+
         <td>
       	  <div class="ui fluid search selection dropdown">
       	    <input type="hidden" name="{{s}}">
       	    <i class="dropdown icon"></i>
       	    <div class="default text">選擇小隊</div>
       	    <div class="menu">
-      	      <div class="item" data-value="1"><i class="af flag"></i>1</div>
-      	      <div class="item" data-value="2"><i class="af flag"></i>2</div>
-      	      <div class="item" data-value="3"><i class="af flag"></i>3</div>
-      	      <div class="item" data-value="4"><i class="af flag"></i>4</div>
-      	      <div class="item" data-value="5"><i class="af flag"></i>5</div>
-      	      <div class="item" data-value="6"><i class="af flag"></i>6</div>
-      	      <div class="item" data-value="7"><i class="af flag"></i>7</div>
-      	      <div class="item" data-value="8"><i class="af flag"></i>8</div>
-      	      <div class="item" data-value="9"><i class="af flag"></i>9</div>
-      	      <div class="item" data-value="10"><i class="af flag"></i>10</div>
+      	      <div class="item" data-value="1"><i class="tw flag"></i>1</div>
+      	      <div class="item" data-value="2"><i class="tw flag"></i>2</div>
+      	      <div class="item" data-value="3"><i class="tw flag"></i>3</div>
+      	      <div class="item" data-value="4"><i class="tw flag"></i>4</div>
+      	      <div class="item" data-value="5"><i class="tw flag"></i>5</div>
+      	      <div class="item" data-value="6"><i class="tw flag"></i>6</div>
+      	      <div class="item" data-value="7"><i class="tw flag"></i>7</div>
+      	      <div class="item" data-value="8"><i class="tw flag"></i>8</div>
+      	      <div class="item" data-value="9"><i class="tw flag"></i>9</div>
+      	      <div class="item" data-value="10"><i class="tw flag"></i>10</div>
       	    </div>
-      	    </input>
       	  </div> 
         </td>
       </tr>
     {% endfor %}
     </tbody>
   </table>
-  <button class="ui button" type="submit">Submit</button>
+  <button class="ui button" type="submit" id="submit">Submit</button>
 </form>
 	
 {% endblock %}
 {% block jsblock %}
 <script src="{% static 'roll_call/js/assignTeam/dropdown.js' %}"></script>
+<script src="{% static 'roll_call/toastr/toastr.js' %}"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#submit').click(function(){
+      toastr.info("提交中請稍候", {timeOut: 2500});
+    })
+  })
+</script>
 {% endblock %}

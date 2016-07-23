@@ -5,23 +5,15 @@
 <head>
 	<meta charset="UTF-8">
 	<title>興鮮人</title>    
-	<link rel="icon" href="nchu_sg.jpg" type="image/ico" />
+	<link rel="icon" href="{% static 'roll_call/nchu_sg.jpg' %}" type="image/ico" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- 引入Ｊquery -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<!-- 引入Ｊs -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.js"></script>
+	
 	<!-- 引入CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.css">
 	<!-- navbar的特效以及css-->
 	<link rel="stylesheet" type="text/css" href="{% static 'roll_call/css/sidebar.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'roll_call/css/entry.css' %}">
-	<script src="{% static 'roll_call/js/pusher.js' %}"></script>
-	<script src="{% static 'roll_call/js/visibility.js' %}"></script>
-	<script src="{% static 'roll_call/js/sidebar.js' %}"></script>
-	<script src="{% static 'roll_call/js/transition.js' %}"></script>
-	<!-- navbar的特效以及css-->
 	{% block eachStyle %}{% endblock %}
 </head>
 <body>
@@ -38,5 +30,17 @@
 {% endblock %}
 {% include "roll_call/base/footer.html" %}
 </body>
+
+<!-- 引入Ｊs TAG -->
+<!-- 引入Ｊquery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- 引入Ｊs -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.js"></script>
+<script src="{% static 'roll_call/js/pusher.js' %}"></script>
+<script src="{% static 'roll_call/js/visibility.js' %}"></script>
+<script src="{% static 'roll_call/js/sidebar.js' %}"></script>
+<script src="{% static 'roll_call/js/transition.js' %}"></script>
+<!-- 引入Ｊs TAG -->
+
 {% block jsblock %}{% endblock %}
 </html>

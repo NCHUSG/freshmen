@@ -1,0 +1,66 @@
+{% extends "roll_call/check/check.html"  %}
+{% load staticfiles %}
+{% block form %}
+<form class="ui form" action="" method="post">
+  {% csrf_token %}
+  
+	<!-- <div class="ui inline fluid search selection dropdown">
+	  <input type="hidden" name="order">
+	  <i class="dropdown icon"></i>
+	  <div class="default text">選擇點名時段</div>
+	  <div class="menu">
+	  	<div class="item" data-value="1"><img class="ui avatar image" src="{% static 'roll_call/nchu_sg.jpg' %}">1</div>
+	  	<div class="item" data-value="2"><img class="ui avatar image" src="{% static 'roll_call/nchu_sg.jpg' %}">2</div>
+	  	<div class="item" data-value="3"><img class="ui avatar image" src="{% static 'roll_call/nchu_sg.jpg' %}">3</div>
+	  	<div class="item" data-value="4"><img class="ui avatar image" src="{% static 'roll_call/nchu_sg.jpg' %}">4</div>
+		</div>
+	</div> -->
+	<div class="ui floating dropdown labeled search icon button">
+	  <input type="hidden" name="order">
+	  <i class="world icon"></i>
+	  <span class="text">選擇點名時段</span>
+	  <div class="menu">
+	  	<div class="item" data-value="1"><img class="ui avatar image" src="{% static 'roll_call/nchu_sg.jpg' %}">1</div>
+	    <div class="item" data-value="2"><img class="ui avatar image" src="{% static 'roll_call/nchu_sg.jpg' %}">2</div>
+	    <div class="item" data-value="3"><img class="ui avatar image" src="{% static 'roll_call/nchu_sg.jpg' %}">3</div>
+	    <div class="item" data-value="4"><img class="ui avatar image" src="{% static 'roll_call/nchu_sg.jpg' %}">4</div>
+	  </div>
+	</div>	
+
+
+  <table class="ui inverted green table">
+  	<div class="ui grid">
+  	  <div class="six wide column">
+			  <thead>
+			    <tr>
+			    <th>ID</th>
+			    <th>Name</th>
+			    <th>Present</th>
+				  </tr>
+			  </thead>
+  	  </div>
+			<tbody>
+			{% for s in RCStuL %}
+			  <tr>
+			    <div class="six wide column">
+			    	<td>{{s}}</td>
+			    </div>
+			    <div class="five wide column">
+			    	<td>{{s.name}}</td>
+			    </div>
+			    <div class="five wide column">
+				    <td>
+				    	<div class="ui toggle checkbox">
+				    	  <input type="checkbox" name={{s}}>
+				    	  <label>出席狀況</label>
+				    	</div>
+				    </td>
+				  </div>
+			  </tr>
+			{% endfor %}
+			</tbody>
+  	</div>
+  </table>
+  <button class="ui button" type="submit" id="submit">Submit</button>
+</form>
+{% endblock %}
