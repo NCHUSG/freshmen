@@ -9,6 +9,6 @@
     <a class="ui inverted button">HI {{request.user}}</h4>
     <a class="ui inverted button" href="{% url 'customer:logout' %}">Log out</a>
   {% else %}
-    <a class="ui inverted button" href="{% url 'customer:login' %}">Log in/Sign Up</a>
+    <a class="ui inverted button" href="/zh-cn/accounts/login/?next=/roll_call/">Log in/Sign Up</a>
   {% endif %}
 </div>

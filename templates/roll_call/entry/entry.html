@@ -11,7 +11,7 @@
 		    興鮮人
 		  </h1>
 		  <h2>讓你以全新的方式認識中興大學</h2>
-		  <div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div>
+		  <div class="ui huge primary button" ><a href="/zh-cn/accounts/login/?next=/roll_call/" style="color:white">Get Started<i class="right arrow icon"></i></a> </div>
 		</div>
 		{% endblock %}
 	</div>
@@ -27,18 +27,15 @@
 							<div class="content">
 								<div class="center" style="font-size: 1.5em;">
 									<div class="ui inverted clock_black" style="font-size: 1em;line-height:1.5em;color:black;">
-										想整理自己想要的課卻
-										<br>嫌學校系統操作不便嗎，
-										<br>選課小幫手，
-										<br>幫助各位打場漂亮的勝仗。
+										 我們準備了相當豐富的活動，所以請新生們務必都參加喔   
 									</div>
 								</div>
 							</div>
 						</div>
-						<img src="{% static 'roll_call/img/calendar.svg' %}">
+						<img src="{% static 'roll_call/img/alarm-clock.svg' %}">
 					</div>
 					<div class="content">
-						<a class="header text_center" href="">出席狀況</a>
+						<a class="header text_center" href="{% url 'roll_call:check' key=0 %}">出席狀況</a>
 					</div>
 				</div>
 				<div class="card stackable">
@@ -46,13 +43,13 @@
 						<div class="ui inverted dimmer">
 							<div class="content">
 								<div class="center">
-									<div class="ui primary clock_black" style="font-size: 1.5em;line-height:1.5em;color:black;">面對琳瑯滿目的課程，
-										<br>毫無頭緒，無從下手嗎?
+									<div class="ui primary clock_black" style="font-size: 1.5em;line-height:1.5em;color:black;">
+										就是要興鮮人好好的
 									</div>
 								</div>
 							</div>
 						</div>
-						<img src="{% static 'roll_call/img/shopping-cart.svg' %}">
+						<img src="{% static 'roll_call/img/nurse.svg' %}">
 					</div>
 					<div class="content">
 						<a class="header text_center" href="">學員狀況</a>
@@ -63,16 +60,15 @@
 						<div class="ui inverted dimmer">
 							<div class="content">
 								<div class="center">
-									<div class="ui primary clock_black" style="font-size: 1.5em;line-height:1.5em;color:black;">面對琳瑯滿目的課程，
-										<br>毫無頭緒，無從下手嗎?
+									<div class="ui primary clock_black" style="font-size: 1.5em;line-height:1.5em;color:black;">您的意見是我們前進的動力
 									</div>
 								</div>
 							</div>
 						</div>
-						<img src="{% static 'roll_call/img/restaurant.svg' %}">
+						<img src="{% static 'roll_call/img/pen.svg' %}">
 					</div>
 					<div class="content">
-						<a class="header text_center" href="http://yahoo.com.tw">意見回應</a>
+						<a class="header text_center" href="">意見回應</a>
 					</div>
 				</div>
 			</div>

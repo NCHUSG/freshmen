@@ -37,7 +37,11 @@
 				  {% if forloop.first %}
 					  <td>
 						<h4 class="ui image header">
-						  <img src="{% static 'roll_call/img/worker.svg' %}" class="ui mini rounded image">
+						  {% if i.gender == "M" %}
+						  	<img src="{% static 'roll_call/img/worker.svg' %}" class="ui mini rounded image">
+						  {% else %}
+						  	<img src="{% static 'roll_call/img/woman.svg' %}" class="ui mini rounded image">
+						  {% endif %}	
 						  <div class="content">
 							姓名
 							<div class="sub header">{{i.studentID}}</div>
