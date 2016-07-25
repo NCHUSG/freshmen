@@ -1,0 +1,66 @@
+{% extends "roll_call/base/base.html"  %}
+{% load staticfiles %}
+{% block eachStyle %}
+	<link rel="stylesheet" type="text/css" href="{% static 'roll_call/toastr/toastr.css' %}">
+{% endblock %}
+{% block content %}
+	{% block dropdown %}
+	<div class="ui floating dropdown labeled search icon button">
+	  <i class="world icon"></i>
+	  <span class="text">{{team}}小隊的點名頁面</span>
+	  <div class="menu">
+		{% for t in teamRange %}
+		<a class="item" href="/roll_call/status/{{t}}">
+		  <img class="ui avatar image" src="{% static 'roll_call/nchu_sg.jpg'%}">
+		  {{ t }}
+		</a>
+		{% endfor %}
+	  </div>
+	</div>
+	{% endblock %}
+
+	{% block form %}
+		
+	{% endblock %}
+
+	<div class="ui comments">
+	  <h3 class="ui dividing header">學員狀況</h3>
+	  {% for i in RCStuL %}
+		    {% for j in i.studentst_set.all|dictsort:"create"  %}
+		      <div class="comment">
+		          <a class="avatar">
+		            {% if i.gender == "M" %}
+		            	<img src="{% static 'roll_call/img/worker.svg' %}" class="ui mini rounded image">
+		            {% else %}
+		            	<img src="{% static 'roll_call/img/woman.svg' %}" class="ui mini rounded image">
+		            {% endif %}	
+		          </a>
+		          <div class="content">
+		            <a class="author">{{i.studentID}}</a>
+		            <div class="metadata">
+		              <div class="date">{{j.create}}</div>
+		            </div>
+		            <div class="text">
+		              <p>{{j.comment}}</p>
+		            </div>
+		            <div class="actions">
+		              <a class="reply">Reply</a>
+		            </div>
+		          </div>
+		        </div>
+		  {% endfor %}
+	  {% endfor %}
+	</div>
+
+{% endblock %}
+{% block jsblock %}
+	<script src="{% static 'roll_call/js/assignTeam/dropdown.js' %}"></script>
+	<script src="{% static 'roll_call/toastr/toastr.js' %}"></script>
+	<script type="text/javascript">
+	  $(document).ready(function(){
+		$('#submit').click(function(){
+		  toastr.info("提交中請稍候", {timeOut: 2500});
+		})
+	  })
+	</script>
+{% endblock %}

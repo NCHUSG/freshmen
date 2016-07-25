@@ -28,3 +28,19 @@ class RCRecord(models.Model):
   present = models.BooleanField(default=True)
   def __str__(self):
     return str(self.RCStu) + "在第" + str(self.RC_order) + "次點名" + "出席："+str(self.present)
+
+class StudentST(models.Model):
+  # 學員狀況
+  RCStu = models.ForeignKey(RCStu)
+  comment = models.CharField(max_length=100)
+  create = models.DateTimeField()
+  def __str__(self):
+    return str(self.RCStu)
+
+class StudentFD(models.Model):
+  # RC回饋
+  RCStu = models.ForeignKey(RCStu)
+  comment = models.CharField(max_length=100)
+  create = models.DateTimeField()
+  def __str__(self):
+    return str(self.RCStu)

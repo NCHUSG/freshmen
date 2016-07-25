@@ -1,0 +1,24 @@
+{% extends "roll_call/status/status.html"  %}
+{% load staticfiles %}
+{% block dropdown %}{% endblock %}
+{% block form %}
+<form class="ui reply form" action="" method="post">
+{% csrf_token %}
+<div class="ui inverted segment">
+  <div class="ui inverted form">
+    <div class="two fields">
+      <div class="field">
+        <label>學號</label>
+        <input placeholder="學號" type="text" name="stID">
+      </div>
+    </div>
+    <div class="inline field">
+      <div class="field">
+        <textarea name="cmt"></textarea>
+      </div>
+    </div>
+    <button class="ui button" type="submit" id="submit">Submit</button>
+  </div>
+</div>
+</form>
+{% endblock %}

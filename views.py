@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.shortcuts import render
 from django.utils import timezone # auto generate create time.
-from apps.roll_call.models import RCStu, RCRecord
+from apps.roll_call.models import RCStu, RCRecord, StudentST, StudentFD
 # 要取得會員的model要這樣寫
 from oscar.core.compat import get_user_model
 from apps.user.models import User
@@ -17,7 +17,7 @@ def check(request, key=0):
 	if request.POST:
 		data = request.POST 
 		data=data.dict()
-		RCStuL = RCStu.objects.filter(team=key) 
+		RCStuL = RCStu.objects.filter(team=key)
 		# 篩選出該小隊的所有成員，然後沒有出現再request.post的資料裏面的就表示他是缺席，因為checkbox只會回傳有勾選的選項
 		order = data['order'] # order是表示這是今天第幾次的點名（主辦單位再看一下時程表就可以知道這是幾點幾分的點名）
 		d = {'RC_order' : order, 'create' : timezone.localtime(timezone.now())}
@@ -42,6 +42,24 @@ def check(request, key=0):
 		team = '第' + RCStuL[0].team
 		return render(request, 'roll_call/check/checkTeam.html', locals())
 
+def status(request, key=0):
+	teamRange = range(1,98)
+	if request.POST:
+		data = request.POST 
+		data=data.dict()
+		rcs = RCStu.objects.get(studentID=data['stID']) 
+		stustatus = StudentST.objects.create(RCStu=rcs, comment=data['cmt'], create=timezone.localtime(timezone.now()))
+
+	if key=='0':
+		RCStuL = RCStu.objects.all() 
+		team = '所有'
+		return render(request, 'roll_call/status/status.html', locals())
+
+	elif key!='':
+		# RCStuL = RCStu.objects.filter(team=key) 
+		# team = '第' + StudentSTL[0].team
+		return render(request, 'roll_call/status/statusTeam.html', locals())
+
 def assignTeam(request):
 	if request.POST:
 		data = request.POST #all element of QuerySet is type of list, i dont know why but turn it into diction can disassembler its list into its origin type.
@@ -62,5 +80,4 @@ def assignTeam(request):
 
 	u = User.objects.all()
 	# print(User._meta.get_all_field_names())
-	print(u)
 	return render(request, 'roll_call/assignTeam/assignTeam.html', locals())
