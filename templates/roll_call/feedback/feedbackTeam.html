@@ -1,4 +1,4 @@
-{% extends "roll_call/status/status.html"  %}
+{% extends "roll_call/feedback/feedback.html"  %}
 {% load staticfiles %}
 
 {% block form %}
@@ -6,15 +6,9 @@
 {% csrf_token %}
 <div class="ui inverted green segment">
   <div class="ui inverted form">
-    <div class="two fields">
-      <div class="field">
-        <label>學號</label>
-        <input placeholder="學號" type="text" name="stID">
-      </div>
-    </div>
     <div class="inline field">
       <div class="field">
-        <textarea name="cmt" placeholder="請回報學員狀況 e.g.XXX肚子痛先讓他回宿舍休息"></textarea>
+        <textarea name="cmt" placeholder="您的意見是我們前進的動力"></textarea>
       </div>
     </div>
     <button class="ui button" type="submit" id="submit">Submit</button>

@@ -19,15 +19,19 @@
 <body>
 <!-- Following Menu -->
 {% include "roll_call/base/leftBar.html" %}
+
 {% block body %}
 <div class="pusher">
 	<div class="ui inverted  aligned segment">
 		{% include "roll_call/base/topBar.html" %}
 	</div>
+
 	{% block content %}
 	{% endblock %}
+
 </div>
 {% endblock %}
+
 {% include "roll_call/base/footer.html" %}
 </body>
 

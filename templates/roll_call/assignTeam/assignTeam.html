@@ -1,8 +1,10 @@
 {% extends "roll_call/base/base.html"  %}
 {% load staticfiles %}
+
 {% block eachStyle %}
 <link rel="stylesheet" type="text/css" href="{% static 'roll_call/toastr/toastr.css' %}">
 {% endblock %}
+
 {% block content %}
 <h1>分配小隊~</h1>
 
@@ -20,12 +22,12 @@
     <tbody>
     {% for s in u %}
       <tr>
-        <td>{{s}}</td>
+        <td>{{s.email}}</td>
         <td>{{s.major}}</td>
 
         <td>
           <div class="ui fluid search selection dropdown">
-            <input type="hidden" name="{{s}}_g">
+            <input type="hidden" name="{{s.email}}_g">
             <!--{s}_g指的是該小隊員的性別-->
             <i class="dropdown icon"></i>
             <div class="default text">選擇性別</div>
@@ -38,7 +40,7 @@
 
         <td>
       	  <div class="ui fluid search selection dropdown">
-      	    <input type="hidden" name="{{s}}">
+      	    <input type="hidden" name="{{s.email}}">
       	    <i class="dropdown icon"></i>
       	    <div class="default text">選擇小隊</div>
       	    <div class="menu">
@@ -63,6 +65,7 @@
 </form>
 	
 {% endblock %}
+
 {% block jsblock %}
 <script src="{% static 'roll_call/js/assignTeam/dropdown.js' %}"></script>
 <script src="{% static 'roll_call/toastr/toastr.js' %}"></script>

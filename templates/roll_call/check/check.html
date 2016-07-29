@@ -1,8 +1,10 @@
 {% extends "roll_call/base/base.html"  %}
 {% load staticfiles %}
+
 {% block eachStyle %}
 	<link rel="stylesheet" type="text/css" href="{% static 'roll_call/toastr/toastr.css' %}">
 {% endblock %}
+
 {% block content %}
 	<div class="ui floating dropdown labeled search icon button">
 	  <i class="world icon"></i>
@@ -63,6 +65,7 @@
 	</table>
 
 {% endblock %}
+
 {% block jsblock %}
 	<script src="{% static 'roll_call/js/assignTeam/dropdown.js' %}"></script>
 	<script src="{% static 'roll_call/toastr/toastr.js' %}"></script>

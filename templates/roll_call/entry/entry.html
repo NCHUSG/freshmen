@@ -1,10 +1,12 @@
 {% extends "roll_call/base/base.html"  %}
 {% load staticfiles %}
+
 {% block body %}
 <!-- Page Contents 功能簡介 -->
 <div class="pusher">
 	<div class="ui inverted masthead center aligned segment">
 		{% include "roll_call/base/topBar.html" %}
+
 		{% block entryInfo%}
 		<div class="ui text container">
 		  <h1 class="ui inverted header">
@@ -14,7 +16,9 @@
 		  <div class="ui huge primary button" ><a href="/zh-cn/accounts/login/?next=/roll_call/" style="color:white">Get Started<i class="right arrow icon"></i></a> </div>
 		</div>
 		{% endblock %}
+
 	</div>
+
 	{% block entryContent %}
 	<!-- 這裡放 子網頁連結-->
 	<div class="ui grid">
@@ -52,7 +56,7 @@
 						<img src="{% static 'roll_call/img/nurse.svg' %}">
 					</div>
 					<div class="content">
-						<a class="header text_center" href="">學員狀況</a>
+						<a class="header text_center" href="{% url 'roll_call:status' key=0 %}">學員狀況</a>
 					</div>
 				</div>
 				<div class="card stackable">
@@ -68,7 +72,7 @@
 						<img src="{% static 'roll_call/img/pen.svg' %}">
 					</div>
 					<div class="content">
-						<a class="header text_center" href="">意見回應</a>
+						<a class="header text_center" href="{% url 'roll_call:feedback' key=0 %}">意見回應</a>
 					</div>
 				</div>
 			</div>
@@ -81,5 +85,6 @@
 		<div class="two wide column"></div>		
 	</div>
 	{% endblock %}
+	
 </div>
 {% endblock %}

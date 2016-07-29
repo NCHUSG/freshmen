@@ -25,7 +25,12 @@ class RCRecord(models.Model):
   RCStu = models.ForeignKey(RCStu)
   RC_order = models.DecimalField(max_digits=1,decimal_places=0,default=1)
   create = models.DateTimeField()
-  present = models.BooleanField(default=True)
+
+  ROLLCALL_CHOICES = (
+    (True,'出席', ),
+    (False,'缺席', ),
+  )
+  present = models.BooleanField(choices=ROLLCALL_CHOICES,default=True)
   def __str__(self):
     return str(self.RCStu) + "在第" + str(self.RC_order) + "次點名" + "出席："+str(self.present)
 
@@ -40,7 +45,7 @@ class StudentST(models.Model):
 class StudentFD(models.Model):
   # RC回饋
   RCStu = models.ForeignKey(RCStu)
-  comment = models.CharField(max_length=100)
+  feedback = models.CharField(max_length=100)
   create = models.DateTimeField()
   def __str__(self):
     return str(self.RCStu)
