@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.shortcuts import render
 from django.utils import timezone # auto generate create time.
+from django.contrib.auth.decorators import login_required
 from apps.roll_call.models import RCStu, RCRecord, StudentST, StudentFD
 # 要取得會員的model要這樣寫
 from oscar.core.compat import get_user_model
@@ -12,8 +13,9 @@ User = get_user_model()
 def entry(request):
 	return render_to_response('roll_call/entry/entry.html',locals())
 
-def check(request, key=0):
-	teamRange = range(1,98)
+@login_required
+def check(request, key):
+	teamRange = range(1,95)
 	if request.POST:
 		data = request.POST 
 		data=data.dict()
@@ -41,7 +43,7 @@ def check(request, key=0):
 		team = '第' + RCStuL[0].team
 		return render(request, 'roll_call/check/checkTeam.html', locals())
 
-
+@login_required
 def assignTeam(request):
 	if request.POST:
 		data = request.POST #all element of QuerySet is type of list, i dont know why but turn it into diction can disassembler its list into its origin type.
@@ -51,10 +53,14 @@ def assignTeam(request):
 			#因為assignTeam顯示的會員資訊是帳號，也就是email，所以要先判斷是不是有包含@ (csrfToken沒有@)，若有則可以取出@前面的學號，再把學號存入roll_call當作key
 			# _g代表是性別的資料
 			if i[0].find('@') != -1 and i[1]!="":
-				if '_g' not in i[0]:
+				if '_team' in i[0]:
 					default = {'team' : i[1]}
 					obj, created = RCStu.objects.update_or_create(studentID = i[0].split('@')[0], defaults=default)
 					# update_or_create will update exist data or create a new one if doesn't exist.
+				elif '_name' in i[0]:
+					default = {'name' : i[1]}
+					obj, created = RCStu.objects.update_or_create(studentID = i[0].split('@')[0], defaults=default)
+
 				else:
 					# 代表是性別的資料
 					default = {'gender' : i[1]}
@@ -65,8 +71,9 @@ def assignTeam(request):
 	# print(User._meta.get_all_field_names())
 	return render(request, 'roll_call/assignTeam/assignTeam.html', locals())
 
-def status(request, key=0):
-	teamRange = range(1,98)
+@login_required
+def status(request, key):
+	teamRange = range(1,95)
 	if request.POST:
 		data = request.POST 
 		data=data.dict()
@@ -83,8 +90,9 @@ def status(request, key=0):
 		team = '第' + RCStuL[0].team
 		return render(request, 'roll_call/status/statusTeam.html', locals())
 
-def feedback(request, key=0):
-	teamRange = range(1,98)
+@login_required
+def feedback(request, key):
+	teamRange = range(1,95)
 	if request.POST:
 		data = request.POST 
 		data=data.dict()

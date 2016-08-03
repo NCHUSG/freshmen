@@ -23,7 +23,7 @@
 		
 	{% endblock %}
 
-	<table class="ui very basic collapsing celled table">
+	<table class="ui very basic collapsing celled table unstackable">
 	  <thead>
 		<tr><th>小隊員</th>
 		<th>出席狀況</th>
@@ -45,17 +45,25 @@
 						  	<img src="{% static 'roll_call/img/woman.svg' %}" class="ui mini rounded image">
 						  {% endif %}	
 						  <div class="content">
-							姓名
+							{{i.name}}
 							<div class="sub header">{{i.studentID}}</div>
 						  </div>
 						</h4>
 					  </td>
 					  <td>
-						{{j.RC_order}}{{j.present}}
+					  	{% if j.present %}
+							{{j.RC_order}}<img src="{% static 'roll_call/img/checked.svg' %}" class="ui mini rounded image">
+						{% else %}
+							{{j.RC_order}}<img src="{% static 'roll_call/img/unchecked.svg' %}" class="ui mini rounded image">
+						{% endif %}
 					  </td>
 				  {% else %}
 					  <td>
-						{{j.RC_order}}{{j.present}}
+					  	{% if j.present %}
+							{{j.RC_order}}<img src="{% static 'roll_call/img/checked.svg' %}" class="ui mini rounded image">
+						{% else %}
+							{{j.RC_order}}<img src="{% static 'roll_call/img/unchecked.svg' %}" class="ui mini rounded image">
+						{% endif %}
 					  </td>
 				  {% endif %}
 			  {% endfor %}

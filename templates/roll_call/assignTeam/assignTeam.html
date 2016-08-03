@@ -8,9 +8,22 @@
 {% block content %}
 <h1>分配小隊~</h1>
 
+<div class="ui floating dropdown labeled search icon button">
+  <i class="world icon"></i>
+  <span class="text">{{team}}小隊的分配小隊頁面</span>
+  <div class="menu">
+  {% for t in teamRange %}
+  <a class="item" href="/roll_call/assignTeam/{{t}}">
+    <img class="ui avatar image" src="{% static 'roll_call/nchu_sg.jpg'%}">
+    {{ t }}
+  </a>
+  {% endfor %}
+  </div>
+</div>
+
 <form class="ui form" action="" method="post">
   {% csrf_token %}
-  <table class="ui inverted green table">
+  <table class="ui inverted unstackable green table">
     <thead>
       <tr>
       <th>學號</th>
@@ -23,24 +36,34 @@
     {% for s in u %}
       <tr>
         <td>{{s.email}}</td>
-        <td>{{s.major}}</td>
+        <td>
+          <div class="ui input">
+            <input type="text" name="{{s.email}}_name" placeholder="請輸入小隊員的名子">
+          </div>
+        </td>
 
         <td>
           <div class="ui fluid search selection dropdown">
             <input type="hidden" name="{{s.email}}_g">
             <!--{s}_g指的是該小隊員的性別-->
             <i class="dropdown icon"></i>
-            <div class="default text">選擇性別</div>
+            <div class="default text" style="display: flex;">選擇性別</div>
             <div class="menu">
-              <div class="item" data-value="M"><img src="{% static 'roll_call/img/worker.svg' %}">男</div>
-              <div class="item" data-value="F"><img src="{% static 'roll_call/img/woman.svg' %}"> 女</div>
+              <div class="item" data-value="M" style="display: flex;">
+                <img src="{% static 'roll_call/img/worker.svg' %}">
+                <span>男</span>
+              </div>
+              <div class="item" data-value="F" style="display: flex;">
+                <img src="{% static 'roll_call/img/woman.svg' %}">
+                <span>女</span>
+              </div>
             </div>
           </div> 
         </td>
 
         <td>
       	  <div class="ui fluid search selection dropdown">
-      	    <input type="hidden" name="{{s.email}}">
+      	    <input type="hidden" name="{{s.email}}_team">
       	    <i class="dropdown icon"></i>
       	    <div class="default text">選擇小隊</div>
       	    <div class="menu">

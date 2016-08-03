@@ -19,7 +19,7 @@
 
   <table class="ui inverted green table">
   	<div class="ui grid">
-  	  <div class="six wide column">
+  	  <div class="unstackable">
 			  <thead>
 			    <tr>
 			    <th>ID</th>
@@ -31,17 +31,17 @@
 			<tbody>
 			{% for s in RCStuL %}
 			  <tr>
-			    <div class="six wide column">
-			    	<td>{{s}}</td>
-			    </div>
-			    <div class="five wide column">
+			    <div class="">
 			    	<td>{{s.name}}</td>
 			    </div>
-			    <div class="five wide column">
+			    <div class="">
+			    	<td>{{s.studentID}}</td>
+			    </div>
+			    <div class="">
 				    <td>
 				    	<div class="ui toggle checkbox">
 				    	  <input type="checkbox" name={{s}}>
-				    	  <label>出席狀況</label>
+				    	  <label>缺席的才要勾喔</label>
 				    	</div>
 				    </td>
 				  </div>

@@ -16,10 +16,16 @@ class RCStu(models.Model):
       default=MALE,
   )
   studentID = models.CharField(max_length=20)
+  name = models.CharField(max_length=10, default="Name")
   team = models.CharField(max_length=10)
   
   def __str__(self):
     return self.studentID+' 第'+self.team+'小隊'
+
+  class Meta:
+    permissions = (
+      ("is_RC_staff", "是興鮮人的工作人員"),
+    )
 
 class RCRecord(models.Model):
   RCStu = models.ForeignKey(RCStu)
