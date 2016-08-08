@@ -1,25 +1,12 @@
-{% extends "roll_call/base/base.html"  %}
+{% extends "roll_call/assignTeam/assign.html"  %}
 {% load staticfiles %}
 
 {% block eachStyle %}
 <link rel="stylesheet" type="text/css" href="{% static 'roll_call/toastr/toastr.css' %}">
 {% endblock %}
 
-{% block content %}
+{% block assignTable %}
 <h1>分配小隊~</h1>
-
-<div class="ui floating dropdown labeled search icon button">
-  <i class="world icon"></i>
-  <span class="text">{{team}}小隊的分配小隊頁面</span>
-  <div class="menu">
-  {% for t in teamRange %}
-  <a class="item" href="/roll_call/assignTeam/{{t}}">
-    <img class="ui avatar image" src="{% static 'roll_call/nchu_sg.jpg'%}">
-    {{ t }}
-  </a>
-  {% endfor %}
-  </div>
-</div>
 
 <form class="ui form" action="" method="post">
   {% csrf_token %}
@@ -99,4 +86,5 @@
     })
   })
 </script>
+{% include 'course/js_script_tag.html' %}
 {% endblock %}
