@@ -50,7 +50,6 @@ def assignTeam(request, key):
 		data = request.POST #all element of QuerySet is type of list, i dont know why but turn it into diction can disassembler its list into its origin type.
 		data=data.dict()# turn Querydict into python's dict
 		####Build default dict, if find data already exitst, than update the info. #####
-		print(data)
 		for i in data.items():
 			#因為assignTeam顯示的會員資訊是帳號，也就是email，所以要先判斷是不是有包含@ (csrfToken沒有@)，若有則可以取出@前面的學號，再把學號存入roll_call當作key
 			# _g代表是性別的資料
@@ -69,7 +68,8 @@ def assignTeam(request, key):
 					obj, created = RCStu.objects.update_or_create(studentID = i[0].split('@')[0], defaults=default)
 	if request.GET!='' and 'major' in request.GET:
 		m = request.GET.dict()['major']
-		u = User.objects.filter(major=m)
+		# print(User._meta.get_all_field_names())
+		u = User.objects.filter(major=m, grade=1)
 		return render(request, 'roll_call/assignTeam/assignTeam.html', locals())
 
 	if key=='0':

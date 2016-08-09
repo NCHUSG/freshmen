@@ -29,7 +29,7 @@ class RCStu(models.Model):
 
 class RCRecord(models.Model):
   RCStu = models.ForeignKey(RCStu)
-  RC_order = models.DecimalField(max_digits=1,decimal_places=0,default=1)
+  RC_order = models.DecimalField(max_digits=2,decimal_places=0,default=1)
   create = models.DateTimeField()
 
   ROLLCALL_CHOICES = (
