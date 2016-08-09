@@ -45,6 +45,7 @@ def check(request, key):
 
 @login_required
 def assignTeam(request, key):
+	teamRange = range(1,95)
 	if request.POST:
 		data = request.POST #all element of QuerySet is type of list, i dont know why but turn it into diction can disassembler its list into its origin type.
 		data=data.dict()# turn Querydict into python's dict

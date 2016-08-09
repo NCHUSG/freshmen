@@ -54,16 +54,9 @@
       	    <i class="dropdown icon"></i>
       	    <div class="default text">選擇小隊</div>
       	    <div class="menu">
-      	      <div class="item" data-value="1"><i class="tw flag"></i>1</div>
-      	      <div class="item" data-value="2"><i class="tw flag"></i>2</div>
-      	      <div class="item" data-value="3"><i class="tw flag"></i>3</div>
-      	      <div class="item" data-value="4"><i class="tw flag"></i>4</div>
-      	      <div class="item" data-value="5"><i class="tw flag"></i>5</div>
-      	      <div class="item" data-value="6"><i class="tw flag"></i>6</div>
-      	      <div class="item" data-value="7"><i class="tw flag"></i>7</div>
-      	      <div class="item" data-value="8"><i class="tw flag"></i>8</div>
-      	      <div class="item" data-value="9"><i class="tw flag"></i>9</div>
-      	      <div class="item" data-value="10"><i class="tw flag"></i>10</div>
+              {% for i in teamRange %}
+        	      <div class="item" data-value={{i}}><i class="tw flag"></i>{{i}}</div>
+              {% endfor %}
       	    </div>
       	  </div> 
         </td>
