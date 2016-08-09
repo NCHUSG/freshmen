@@ -70,6 +70,7 @@ def assignTeam(request, key):
 		m = request.GET.dict()['major']
 		# print(User._meta.get_all_field_names())
 		u = User.objects.filter(major=m, grade=1)
+		me = request.user
 		return render(request, 'roll_call/assignTeam/assignTeam.html', locals())
 
 	if key=='0':

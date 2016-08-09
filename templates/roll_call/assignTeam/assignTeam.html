@@ -20,6 +20,48 @@
   	  </tr>
     </thead>
     <tbody>
+
+    <tr style="color:red">
+      <td>{{me.email}}</td>
+      <td>
+        <div class="ui input">
+          <input type="text" name="{{me.email}}_name" placeholder="隊輔記得輸入自己的名子" style="color:red">
+        </div>
+      </td>
+
+      <td>
+        <div class="ui fluid search selection dropdown">
+          <input type="hidden" name="{{me.email}}_g">
+          <!--{s}_g指的是該小隊員的性別-->
+          <i class="dropdown icon"></i>
+          <div class="default text" style="display: flex;">選擇性別</div>
+          <div class="menu">
+            <div class="item" data-value="M" style="display: flex;">
+              <img src="{% static 'roll_call/img/worker.svg' %}">
+              <span>男</span>
+            </div>
+            <div class="item" data-value="F" style="display: flex;">
+              <img src="{% static 'roll_call/img/woman.svg' %}">
+              <span>女</span>
+            </div>
+          </div>
+        </div> 
+      </td>
+
+      <td>
+        <div class="ui fluid search selection dropdown">
+          <input type="hidden" name="{{me.email}}_team">
+          <i class="dropdown icon"></i>
+          <div class="default text">選擇小隊</div>
+          <div class="menu">
+            {% for i in teamRange %}
+              <div class="item" data-value={{i}}><i class="tw flag"></i>{{i}}</div>
+            {% endfor %}
+          </div>
+        </div> 
+      </td>
+    </tr>
+
     {% for s in u %}
       <tr>
         <td>{{s.email}}</td>
