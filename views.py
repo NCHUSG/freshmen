@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.core.urlresolvers import reverse
 from django.utils import timezone # auto generate create time.
 from django.contrib.auth.decorators import login_required
 from apps.roll_call.models import RCStu, RCRecord, StudentST, StudentFD
@@ -56,6 +57,7 @@ def assignTeam(request, key):
 			if i[0].find('@') != -1 and i[1]!="":
 				if '_team' in i[0]:
 					default = {'team' : i[1]}
+					yourTeam = i[1]
 					obj, created = RCStu.objects.update_or_create(studentID = i[0].split('@')[0], defaults=default)
 					# update_or_create will update exist data or create a new one if doesn't exist.
 				elif '_name' in i[0]:
@@ -66,6 +68,8 @@ def assignTeam(request, key):
 					# 代表是性別的資料
 					default = {'gender' : i[1]}
 					obj, created = RCStu.objects.update_or_create(studentID = i[0].split('@')[0], defaults=default)
+		return redirect('roll_call:check', key=yourTeam)
+
 	if request.GET!='' and 'major' in request.GET:
 		m = request.GET.dict()['major']
 		# print(User._meta.get_all_field_names())
