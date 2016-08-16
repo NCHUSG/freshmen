@@ -35,7 +35,8 @@ def check(request, key):
 				r = RCRecord.objects.update_or_create(RCStu=i, RC_order=order, defaults=d)
 
 	if key=='0':
-		RCStuL = RCStu.objects.all() 
+		RCStuL = RCStu.objects.all()
+
 		team = '所有'
 		return render(request, 'roll_call/check/check.html', locals())
 
@@ -56,17 +57,16 @@ def assignTeam(request, key):
 			# _g代表是性別的資料
 			if i[0].find('@') != -1 and i[1]!="":
 				if '_team' in i[0]:
-					default = {'team' : i[1]}
+					foreignUser = User.objects.get(school_email=i[0].split('_team')[0])
+					default = {'team' : i[1], 'upperUser':foreignUser}
 					yourTeam = i[1]
 					obj, created = RCStu.objects.update_or_create(studentID = i[0].split('@')[0], defaults=default)
 					# update_or_create will update exist data or create a new one if doesn't exist.
-				elif '_name' in i[0]:
-					default = {'name' : i[1]}
-					obj, created = RCStu.objects.update_or_create(studentID = i[0].split('@')[0], defaults=default)
 
 				else:
 					# 代表是性別的資料
-					default = {'gender' : i[1]}
+					foreignUser = User.objects.get(school_email=i[0].split('_g')[0])
+					default = {'gender' : i[1], 'upperUser':foreignUser}
 					obj, created = RCStu.objects.update_or_create(studentID = i[0].split('@')[0], defaults=default)
 		return redirect('roll_call:check', key=yourTeam)
 
@@ -78,7 +78,6 @@ def assignTeam(request, key):
 		return render(request, 'roll_call/assignTeam/assignTeam.html', locals())
 
 	if key=='0':
-		# print(User._meta.get_all_field_names())
 		return render(request, 'roll_call/assignTeam/assign.html', locals())
 
 @login_required

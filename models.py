@@ -1,8 +1,16 @@
 # -*- coding: utf-8 -*-
+import django
+from django.conf import settings
 from django.db import models
 from datetime import datetime
+# 要取得會員的model要這樣寫
+from oscar.core.compat import get_user_model
+from apps.user.models import User
+User = get_user_model()
+
 # Create your models here.
 class RCStu(models.Model):
+  upperUser = models.ForeignKey(User, default=1)# 連結到系統的user帳號
   MALE = 'M'
   FEMALE = 'F'
   GENDER_CHOICES = (

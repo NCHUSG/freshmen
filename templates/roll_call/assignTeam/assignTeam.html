@@ -14,7 +14,6 @@
     <thead>
       <tr>
       <th>學號</th>
-      <th>姓名</th>
       <th>性別</th>
       <th>小隊</th>
   	  </tr>
@@ -22,13 +21,7 @@
     <tbody>
 
     <tr style="color:red">
-      <td>{{me.email}}</td>
-      <td>
-        <div class="ui input">
-          <input type="text" name="{{me.email}}_name" placeholder="隊輔記得輸入自己的名子" style="color:red">
-        </div>
-      </td>
-
+      <td style="color:red">{{me.email}}</td>
       <td>
         <div class="ui fluid search selection dropdown">
           <input type="hidden" name="{{me.email}}_g">
@@ -65,12 +58,6 @@
     {% for s in u %}
       <tr>
         <td>{{s.email}}</td>
-        <td>
-          <div class="ui input">
-            <input type="text" name="{{s.email}}_name" placeholder="請輸入小隊員的名子">
-          </div>
-        </td>
-
         <td>
           <div class="ui fluid search selection dropdown">
             <input type="hidden" name="{{s.email}}_g">
