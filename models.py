@@ -10,7 +10,7 @@ User = get_user_model()
 
 # Create your models here.
 class RCStu(models.Model):
-  upperUser = models.ForeignKey(User, default=1)# 連結到系統的user帳號
+  upperUser = models.OneToOneField(User)# 連結到系統的user帳號
   MALE = 'M'
   FEMALE = 'F'
   GENDER_CHOICES = (

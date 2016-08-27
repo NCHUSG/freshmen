@@ -5,6 +5,7 @@ from django.shortcuts import render, redirect
 from django.core.urlresolvers import reverse
 from django.utils import timezone # auto generate create time.
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
 from apps.roll_call.models import RCStu, RCRecord, StudentST, StudentFD
 # 要取得會員的model要這樣寫
 from oscar.core.compat import get_user_model
@@ -115,6 +116,10 @@ def feedback(request, key):
 		return render(request, 'roll_call/feedback/feedback.html', locals())
 
 	else:
+		userMajor = request.user.major
 		RCStuL = RCStu.objects.filter(team=key) 
 		team = '第' + RCStuL[0].team
 		return render(request, 'roll_call/feedback/feedbackTeam.html', locals())
+def mylogout(request):
+	logout(request)
+	return redirect(reverse('roll_call:entry'))
