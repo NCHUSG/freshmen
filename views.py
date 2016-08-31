@@ -37,13 +37,13 @@ def check(request, key):
 
 	if key=='0':
 		RCStuL = RCStu.objects.all()
-
 		team = '所有'
 		return render(request, 'roll_call/check/check.html', locals())
 
 	else:
 		RCStuL = RCStu.objects.filter(team=key) 
 		team = '第' + RCStuL[0].team
+		userMajor = request.user.major
 		return render(request, 'roll_call/check/checkTeam.html', locals())
 
 @login_required
