@@ -1,0 +1,17 @@
+{% extends "roll_call/base/base.html"  %}
+
+{% block content %}
+<form class="ui reply form" action="" method="post">
+{% csrf_token %}
+<div class="ui inverted green segment">
+  <div class="ui inverted form">
+    <div class="inline field">
+      <div class="field">
+        <input name="email" placeholder="請填入要給予權限的使用者email"></input>
+      </div>
+    </div>
+    <button class="ui button" type="submit" id="submit">Submit</button>
+  </div>
+</div>
+</form>
+{% endblock %}

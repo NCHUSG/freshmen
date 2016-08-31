@@ -4,7 +4,7 @@ from django.shortcuts import render_to_response
 from django.shortcuts import render, redirect
 from django.core.urlresolvers import reverse
 from django.utils import timezone # auto generate create time.
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth import logout
 from apps.roll_call.models import RCStu, RCRecord, StudentST, StudentFD
 # 要取得會員的model要這樣寫
@@ -123,3 +123,17 @@ def feedback(request, key):
 def mylogout(request):
 	logout(request)
 	return redirect(reverse('roll_call:entry'))
+
+@user_passes_test(lambda u: u.is_staff, login_url='/accounts/login/')
+def permission(request):
+	if request.POST:
+		data = request.POST 
+		data=data.dict()
+		print(data)
+		permitUser = User.objects.get(email=data['email'])
+		permitUser.is_staff = True
+		permitUser.save()
+		permitUser = User.objects.get(email=data['email'])
+		print(permitUser.is_staff)
+		return render(request, 'roll_call/permission/permission.html', locals())		
+	return render(request, 'roll_call/permission/permission.html', locals())
