@@ -58,7 +58,7 @@ def assignTeam(request, key):
 			# _g代表是性別的資料
 			if i[0].find('@') != -1 and i[1]!="":
 				if '_team' in i[0]:
-					foreignUser = User.objects.get(school_email=i[0].split('_team')[0])
+					foreignUser = User.objects.get(email=i[0].split('_team')[0])
 					default = {'team' : i[1], 'upperUser':foreignUser}
 					yourTeam = i[1]
 					obj, created = RCStu.objects.update_or_create(studentID = i[0].split('@')[0], defaults=default)
@@ -66,7 +66,7 @@ def assignTeam(request, key):
 
 				else:
 					# 代表是性別的資料
-					foreignUser = User.objects.get(school_email=i[0].split('_g')[0])
+					foreignUser = User.objects.get(email=i[0].split('_g')[0])
 					default = {'gender' : i[1], 'upperUser':foreignUser}
 					obj, created = RCStu.objects.update_or_create(studentID = i[0].split('@')[0], defaults=default)
 		return redirect('roll_call:check', key=yourTeam)
