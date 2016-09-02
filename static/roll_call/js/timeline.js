@@ -13,11 +13,13 @@ $(function() {
       label: '<h4><span class="grey lighten-3">9月</span></h4>',
       shortContent: ' \
       <div class="col s12 center"> \
-        <img class="school" src="/static/roll_call/img/school.svg" alt="" /> \
+        <img class="school" src="/static/roll_call/img/muscular-man-flexing-silhouette.svg" alt="" /> \
+        <h6>歡迎來到溫暖的宿舍</h6> \
+        <h6>以下是今年度的活動</h6> \
       </div>',
       fullContent: '\
       <div class="col s12 center"> \
-        <img class="school" src="/static/roll_call/img/school.svg" alt="" /> \
+        <img class="school" src="/static/roll_call/img/muscular-man-flexing-silhouette.svg" alt="" /> \
         <h6>歡迎來到溫暖的宿舍</h6> \
         <h6>以下是今年度的活動</h6> \
       </div>',

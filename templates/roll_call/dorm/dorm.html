@@ -1,9 +1,12 @@
 {% extends "roll_call/base/base.html"  %}
 {% load staticfiles %}
+{% block title%}興大宿舍{% endblock %}
 {% block eachStyle %}
 <link rel="stylesheet" href="{% static 'roll_call/module/timeline/css/jquery.timelineMe.css' %}">
 <!--Import materialize.css-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
 {% endblock %}
 {% block body %}
 <!-- Page Contents 功能簡介 -->
@@ -24,7 +27,7 @@
 		{% endblock %}
 
 	</div>
-	
+
 	<!--時間軸模組-->
 	<section id="timeline" class="section grey lighten-3">
 	  <div class="row">
@@ -34,7 +37,7 @@
 	<!--時間軸模組-->
 	{% block entryContent %}
 	<!-- 這裡放 子網頁連結-->
-	<div class="ui grid">
+	<!-- <div class="ui grid">
 		<div class="two wide column"></div>
 		<div class="twelve wide column">
 			<div class="ui three special stackable cards" style="margin:1px auto;width: 85%;">
@@ -89,7 +92,7 @@
 						<a class="header text_center" href="{% url 'roll_call:status' key=0 %}">宿舍環境介紹</a>
 					</div>
 				</div>
-				
+
 			</div>
 			<div class="row">
 				<div align="center">
@@ -97,13 +100,125 @@
 				</div>
 			</div>
 		</div>
-		<div class="two wide column"></div>		
+		<div class="two wide column"></div>
+	</div> -->
+	<div class="ui grid stackable">
+			<div class="row">
+					<div class="three wide column"></div>
+					<div class="five wide column">
+							<div align="left">
+									<h5>樓長</h5>
+									<div class="ui bulleted list">
+									  <div class="item">每層樓都有一間樓長房，需要幫忙就去敲敲他們的門吧</div>
+									  <div class="item">
+									    <div>服務事項：</div>
+									    <div class="list">
+									      <div class="item">發車證</div>
+												<div class="item">發放冷氣遙控器</div>
+									    </div>
+									  </div>
+									</div>
+							</div>
+					</div>
+					<div class="five wide column">
+							<div align="center">
+									<img class="ui small image" src="{% static 'roll_call/img/worker.svg' %}">
+							</div>
+					</div>
+					<div class="three wide column"></div>
+			</div>
+			<div class="row">
+					<div align="center">
+							<img style="visibility:hidden;" class="ui tiny image" src="{% static 'roll_call/GitHub-52.png' %}">
+					</div>
+			</div>
+			<div class="row">
+					<div class="three wide column"></div>
+					<div class="five wide column">
+							<div align="left">
+									<h5>網管</h5>
+									<p>一群帥氣的<b>宅男</b></p>
+							</div>
+					</div>
+					<div class="five wide column">
+						<div align="center">
+							<img class="ui small image" src="{% static 'roll_call/img/employee.svg' %}">
+						</div>
+					</div>
+					<div class="three wide column"></div>
+			</div>
+			<div class="row">
+					<div align="center">
+							<img style="visibility:hidden;" class="ui tiny image" src="{% static 'roll_call/GitHub-52.png' %}">
+					</div>
+			</div>
+			<div class="row">
+					<div class="three wide column"></div>
+					<div class="five wide column">
+							<div align="left">
+									<h5>點心吧</h5>
+									<p>沒有在關的零食櫃，和各種沖泡飲品任你享用</p>
+									<p>還有不定期的pizza派對</p>
+							</div>
+					</div>
+					<div class="five wide column">
+							<div align="center">
+									<img class="ui small image" src="{% static 'roll_call/img/man.svg' %}">
+							</div>
+					</div>
+					<div class="three wide column"></div>
+			</div>
+			<div class="row">
+					<div align="center">
+							<img style="visibility:hidden;" class="ui tiny image" src="{% static 'roll_call/GitHub-52.png' %}">
+					</div>
+			</div>
+			<div class="row">
+					<div class="three wide column"></div>
+					<div class="five wide column">
+							<div align="center">
+									<img class="ui small image" src="{% static 'roll_call/img/conversation.svg' %}">
+							</div>
+					</div>
+					<div class="five wide column">
+							<div align="left">
+									<h5>討論與溝通的文化</h5>
+									<p>我們相信，一個偉大的專案背後，需要各種意見和想法。透過團隊成員的溝通，互相激盪創意；你會發現設計師的堅持、行銷團隊的策略、程式前後端的縝密思緒， 這些靈魂互相交融，進而創造令人驚艷的大學生平台 !</p>
+							</div>
+					</div>
+					<div class="three wide column"></div>
+			</div>
+			<div class="row">
+					<div align="center">
+							<img style="visibility:hidden;" class="ui tiny image" src="{% static 'roll_call/GitHub-52.png' %}">
+					</div>
+			</div>
+			<div class="row">
+					<div class="three wide column"></div>
+					<div class="five wide column">
+							<div align="left">
+									<h5>優質的辦公空間</h5>
+									<p>寬敞的空間、舒適的椅子以及溫暖的床</p>
+							</div>
+					</div>
+					<div class="five wide column">
+							<center>
+									<img class="ui small image" src="{% static 'roll_call/img/pencil.svg' %}">
+							</center>
+					</div>
+					<div class="three wide column"></div>
+			</div>
+	</div>
+	<div class="row">
+			<div align="center">
+					<img style="visibility:hidden;" class="ui tiny image" src="{% static 'roll_call/GitHub-52.png' %}">
+			</div>
 	</div>
 	{% endblock %}
-	
+
 </div>
 {% endblock %}
 {% block jsblock %}
 <script src="{% static 'roll_call/module/timeline/js/jquery.timelineMe.js' %}"></script>
-<script src="{% static 'roll_call/js/timeline.js' %}"></script>    
+<script src="{% static 'roll_call/js/timeline.js' %}"></script>
 {% endblock %}
