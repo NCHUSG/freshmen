@@ -1,0 +1,50 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title%}興大宿舍{% endblock %}</title>
+	<link rel="icon" href="{% static 'entry/nchu_sg.jpg' %}" type="image/ico" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- 引入CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.css">
+	<!-- navbar的特效以及css-->
+	<link rel="stylesheet" type="text/css" href="{% static 'entry/css/sidebar.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'entry/css/entry.css' %}">
+	{% block eachStyle %}{% endblock %}
+</head>
+<body>
+<!-- Following Menu -->
+{% include "entry/leftBar.html" %}
+
+{% block body %}
+<div class="pusher">
+	<div class="ui inverted  aligned segment">
+		{% include "entry/topBar.html" %}
+	</div>
+
+	{% block content %}
+	{% endblock %}
+
+</div>
+{% endblock %}
+
+{% include "entry/footer.html" %}
+</body>
+
+<!-- 引入Ｊs TAG -->
+<!-- 引入Ｊquery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- 引入Ｊs -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.js"></script>
+<script src="{% static 'entry/js/pusher.js' %}"></script>
+<script src="{% static 'entry/js/visibility.js' %}"></script>
+<script src="{% static 'entry/js/sidebar.js' %}"></script>
+<script src="{% static 'entry/js/transition.js' %}"></script>
+<!-- 引入Ｊs TAG -->
+
+{% block jsblock %}{% endblock %}
+</html>

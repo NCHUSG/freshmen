@@ -1,4 +1,4 @@
-{% extends "roll_call/base/base.html"  %}
+{% extends "roll_call/dorm/base.html"  %}
 {% load staticfiles %}
 {% block title%}興大宿舍{% endblock %}
 {% block eachStyle %}
@@ -36,72 +36,7 @@
 	</section>
 	<!--時間軸模組-->
 	{% block entryContent %}
-	<!-- 這裡放 子網頁連結-->
-	<!-- <div class="ui grid">
-		<div class="two wide column"></div>
-		<div class="twelve wide column">
-			<div class="ui three special stackable cards" style="margin:1px auto;width: 85%;">
-				<div class="card stackable">
-                    <div class="blurring dimmable image">
-                        <div class="ui inverted dimmer">
-                            <div class="content">
-                                <div class="center" style="font-size: 1.5em;">
-                                    <div class="ui inverted clock_black" style="font-size: 1em;line-height:1.5em;color:black;">
-                                         每次到了選課就頭痛嗎？
-                                         用小幫手讓你事半功倍吧
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <img src="{% static 'entry/img/calendar.svg' %}">
-                    </div>
-                    <div class="content">
-                        <a class="header text_center" href="{% url 'course:course_zh_TW' %}">選課小幫手	</a>
-                    </div>
-                </div>
-                <div class="card stackable">
-                	<div class="blurring dimmable image">
-                		<div class="ui inverted dimmer">
-                			<div class="content">
-                				<div class="center">
-                					<div class="ui primary clock_black" style="font-size: 1.5em;line-height:1.5em;color:black;">您的意見是我們前進的動力
-                					</div>
-                				</div>
-                			</div>
-                		</div>
-                		<img src="{% static 'roll_call/img/pen.svg' %}">
-                	</div>
-                	<div class="content">
-                		<a class="header text_center" href="{% url 'roll_call:feedback' key=0 %}">意見回應</a>
-                	</div>
-                </div>
-				<div class="card stackable">
-					<div class="blurring dimmable image">
-						<div class="ui inverted dimmer">
-							<div class="content">
-								<div class="center">
-									<div class="ui primary clock_black" style="font-size: 1.5em;line-height:1.5em;color:black;">
-										看看你們的新家吧
-									</div>
-								</div>
-							</div>
-						</div>
-						<img src="{% static 'roll_call/img/pikachu.svg' %}">
-					</div>
-					<div class="content">
-						<a class="header text_center" href="{% url 'roll_call:status' key=0 %}">宿舍環境介紹</a>
-					</div>
-				</div>
 
-			</div>
-			<div class="row">
-				<div align="center">
-					<img style="visibility:hidden;" class="ui Mini image" src="{% static 'roll_call/img/pikachu.sv' %}">
-				</div>
-			</div>
-		</div>
-		<div class="two wide column"></div>
-	</div> -->
 	<div class="ui grid stackable">
 			<div class="row">
 					<div class="three wide column"></div>
@@ -117,6 +52,20 @@
 												<div class="item">發放冷氣遙控器</div>
 									    </div>
 									  </div>
+										<div class="item">
+											<div>宣導事項：</div>
+											<div class="list">
+												<div class="item">申請網路步驟：
+													<div class="list">
+														<div class="item">打開瀏覽器輸入：140.120.4.13</div>
+														<div class="item">學號欄位請把第1碼改成英文，大學部改成s 碩班改成g 博班改成d 夜校改成n 在職專搬改成w</div>
+														<div class="item">密碼請輸入：興大單一簽入系統的密碼</div>
+													</div>
+												</div>
+												<div class="item">每天的流量為5G（上傳 + 下載），超流會斷往，並於凌晨12：00恢復</div>
+												<div class="item">禁止使用P2P軟體，如foxy BT彗星等等</div>
+											</div>
+										</div>
 									</div>
 							</div>
 					</div>
@@ -137,7 +86,30 @@
 					<div class="five wide column">
 							<div align="left">
 									<h5>網管</h5>
-									<p>一群帥氣的<b>宅男</b></p>
+									<div class="ui bulleted list">
+									  <div class="item">一群帥氣的 <del>宅男</del> 技術人員</div>
+									  <div class="item">
+									    <div>服務事項：</div>
+									    <div class="list">
+									      <div class="item">解決網路連線問題</div>
+												<div class="item">對違反宿舍規定的住宿生進行斷網處罰</div>
+									    </div>
+									  </div>
+										<div class="item">
+											<div>宣導事項：</div>
+											<div class="list">
+												<div class="item">申請網路步驟：
+													<div class="list">
+														<div class="item">打開瀏覽器輸入：140.120.4.13</div>
+														<div class="item">學號欄位請把第1碼改成英文，大學部改成s 碩班改成g 博班改成d 夜校改成n 在職專搬改成w</div>
+														<div class="item">密碼請輸入：興大單一簽入系統的密碼</div>
+													</div>
+												</div>
+												<div class="item">每天的流量為5G（上傳 + 下載），超流會斷往，並於凌晨12：00恢復</div>
+												<div class="item">禁止使用P2P軟體，如foxy BT彗星等等</div>
+											</div>
+										</div>
+									</div>
 							</div>
 					</div>
 					<div class="five wide column">
@@ -156,9 +128,31 @@
 					<div class="three wide column"></div>
 					<div class="five wide column">
 							<div align="left">
-									<h5>點心吧</h5>
-									<p>沒有在關的零食櫃，和各種沖泡飲品任你享用</p>
-									<p>還有不定期的pizza派對</p>
+									<h5>財務委員</h5>
+									<div class="ui bulleted list">
+									  <div class="item">一群帥氣的 <del>宅男</del> 技術人員</div>
+									  <div class="item">
+									    <div>服務事項：</div>
+									    <div class="list">
+									      <div class="item">解決網路連線問題</div>
+												<div class="item">對違反宿舍規定的住宿生進行斷網處罰</div>
+									    </div>
+									  </div>
+										<div class="item">
+											<div>宣導事項：</div>
+											<div class="list">
+												<div class="item">申請網路步驟：
+													<div class="list">
+														<div class="item">打開瀏覽器輸入：140.120.4.13</div>
+														<div class="item">學號欄位請把第1碼改成英文，大學部改成s 碩班改成g 博班改成d 夜校改成n 在職專搬改成w</div>
+														<div class="item">密碼請輸入：興大單一簽入系統的密碼</div>
+													</div>
+												</div>
+												<div class="item">每天的流量為5G（上傳 + 下載），超流會斷往，並於凌晨12：00恢復</div>
+												<div class="item">禁止使用P2P軟體，如foxy BT彗星等等</div>
+											</div>
+										</div>
+									</div>
 							</div>
 					</div>
 					<div class="five wide column">
@@ -168,46 +162,7 @@
 					</div>
 					<div class="three wide column"></div>
 			</div>
-			<div class="row">
-					<div align="center">
-							<img style="visibility:hidden;" class="ui tiny image" src="{% static 'roll_call/GitHub-52.png' %}">
-					</div>
-			</div>
-			<div class="row">
-					<div class="three wide column"></div>
-					<div class="five wide column">
-							<div align="center">
-									<img class="ui small image" src="{% static 'roll_call/img/conversation.svg' %}">
-							</div>
-					</div>
-					<div class="five wide column">
-							<div align="left">
-									<h5>討論與溝通的文化</h5>
-									<p>我們相信，一個偉大的專案背後，需要各種意見和想法。透過團隊成員的溝通，互相激盪創意；你會發現設計師的堅持、行銷團隊的策略、程式前後端的縝密思緒， 這些靈魂互相交融，進而創造令人驚艷的大學生平台 !</p>
-							</div>
-					</div>
-					<div class="three wide column"></div>
-			</div>
-			<div class="row">
-					<div align="center">
-							<img style="visibility:hidden;" class="ui tiny image" src="{% static 'roll_call/GitHub-52.png' %}">
-					</div>
-			</div>
-			<div class="row">
-					<div class="three wide column"></div>
-					<div class="five wide column">
-							<div align="left">
-									<h5>優質的辦公空間</h5>
-									<p>寬敞的空間、舒適的椅子以及溫暖的床</p>
-							</div>
-					</div>
-					<div class="five wide column">
-							<center>
-									<img class="ui small image" src="{% static 'roll_call/img/pencil.svg' %}">
-							</center>
-					</div>
-					<div class="three wide column"></div>
-			</div>
+
 	</div>
 	<div class="row">
 			<div align="center">

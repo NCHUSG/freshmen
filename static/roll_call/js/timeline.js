@@ -23,7 +23,8 @@ $(function() {
         <h6>歡迎來到溫暖的宿舍</h6> \
         <h6>以下是今年度的活動</h6> \
       </div>',
-      showMore: showMoreBtnAuto,
+      showMore: showMoreBtn,
+      showLess: showLessBtn,
     },
     {
       type: 'smallItem',
