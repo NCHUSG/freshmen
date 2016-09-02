@@ -18,11 +18,7 @@
 		  </h1>
 		  <h2>在FB上面追蹤我們</h2>
 		  <div class="ui huge primary button" >
-			{% if request.user.is_authenticated %}
-				<a href="{% url 'roll_call:entry' %}" style="color:white">
-			{% else %}
-				<a href="/zh-tw/accounts/login/?next=/roll_call/" style="color:white">
-			{% endif %}
+			<a href="https://www.facebook.com/groups/1754992211444234/?notif_t=group_added_to_group&notif_id=1472778428382838" style="color:white">
 		  	Get Started<i class="right arrow icon"></i></a> </div>
 		</div>
 		{% endblock %}

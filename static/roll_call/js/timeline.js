@@ -27,12 +27,12 @@ $(function() {
       label: '加入資訊社',
       shortContent: '\
         <div class="col s12 center"> \
-          <img class="timeline-photo" src="img/nchuit.jpg" alt="" /> \
+          <img class="timeline-photo" src="/static/roll_call/img/pikachu.svg" alt="" /> \
           <h5>資訊社</h5> \
         </div>',
       fullContent: '\
         <div class="col s12 center"> \
-          <img class="timeline-photo" src="img/nchuit.jpg" alt="" /> \
+          <img class="timeline-photo" src="/static/roll_call/img/pikachu.svg" alt="" /> \
           <h5>資訊社</h5> \
           <p>資訊社對我意義重大</p> \
           <p>在許多學長的教導下我才能夠踏入資訊的領域</p> \
