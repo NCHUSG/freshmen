@@ -137,3 +137,6 @@ def permission(request):
 		print(permitUser.is_staff)
 		return render(request, 'roll_call/permission/permission.html', locals())		
 	return render(request, 'roll_call/permission/permission.html', locals())
+
+def dorm(request):
+	return render(request, 'roll_call/dorm/dorm.html', locals())

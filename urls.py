@@ -9,4 +9,5 @@ urlpatterns = patterns('apps.roll_call.views',
   url(r'^assignTeam/(?P<key>\d{1,5})/$', 'assignTeam', name="assignTeam"),
   url(r'^mylogout/', 'mylogout', name="mylogout"),
   url(r'^permission/', 'permission', name="permission"),
+  url(r'^dorm/$', 'dorm', name="dorm"),
 )

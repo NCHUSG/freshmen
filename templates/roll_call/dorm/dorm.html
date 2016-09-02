@@ -1,6 +1,10 @@
 {% extends "roll_call/base/base.html"  %}
 {% load staticfiles %}
-
+{% block eachStyle %}
+<link rel="stylesheet" href="{% static 'roll_call/module/timeline/css/jquery.timelineMe.css' %}">
+<!--Import materialize.css-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+{% endblock %}
 {% block body %}
 <!-- Page Contents 功能簡介 -->
 <div class="pusher">
@@ -24,7 +28,14 @@
 		{% endblock %}
 
 	</div>
-
+	
+	<!--時間軸模組-->
+	<section id="timeline" class="section grey lighten-3">
+	  <div class="row">
+	    <div id="timeline-container-basic" type="text"></div>
+	  </div>
+	</section>
+	<!--時間軸模組-->
 	{% block entryContent %}
 	<!-- 這裡放 子網頁連結-->
 	<div class="ui grid">
@@ -37,8 +48,8 @@
                             <div class="content">
                                 <div class="center" style="font-size: 1.5em;">
                                     <div class="ui inverted clock_black" style="font-size: 1em;line-height:1.5em;color:black;">
-                                         <h2>每次到了選課就頭痛嗎？</h2>
-                                         <h2>用小幫手讓你事半功倍吧</h2>
+                                         每次到了選課就頭痛嗎？
+                                         用小幫手讓你事半功倍吧
                                     </div>
                                 </div>
                             </div>
@@ -46,7 +57,7 @@
                         <img src="{% static 'entry/img/calendar.svg' %}">
                     </div>
                     <div class="content">
-                        <a class="header text_center" href="{% url 'course:course_zh_TW' %}"><h1 align='center'>選課小幫手</h1></a>
+                        <a class="header text_center" href="{% url 'course:course_zh_TW' %}">選課小幫手	</a>
                     </div>
                 </div>
                 <div class="card stackable">
@@ -86,7 +97,7 @@
 			</div>
 			<div class="row">
 				<div align="center">
-					<img style="visibility:hidden;" class="ui Mini image" src="{% static 'roll_call/GitHub-52.png' %}">
+					<img style="visibility:hidden;" class="ui Mini image" src="{% static 'roll_call/img/pikachu.sv' %}">
 				</div>
 			</div>
 		</div>
@@ -95,4 +106,8 @@
 	{% endblock %}
 	
 </div>
+{% endblock %}
+{% block jsblock %}
+<script src="{% static 'roll_call/module/timeline/js/jquery.timelineMe.js' %}"></script>
+<script src="{% static 'roll_call/js/timeline.js' %}"></script>    
 {% endblock %}
