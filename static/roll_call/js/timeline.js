@@ -10,32 +10,33 @@ $(function() {
     },
     {
       type: 'bigItem',
-      label: '<span class="grey lighten-3">September</span>',
+      label: '<h4><span class="grey lighten-3">9月</span></h4>',
       shortContent: ' \
       <div class="col s12 center"> \
-        <img class="school" src="/static/roll_call/img/NCHU-Symbol.png" alt="" /> \
+        <img class="school" src="/static/roll_call/img/school.svg" alt="" /> \
       </div>',
       fullContent: '\
       <div class="col s12 center"> \
-        <img class="school" src="img/NCHU-Symbol.png" alt="" /> \
-        <h6>就讀於中興大學 資工系</h6> \
+        <img class="school" src="/static/roll_call/img/school.svg" alt="" /> \
+        <h6>歡迎來到溫暖的宿舍</h6> \
+        <h6>以下是今年度的活動</h6> \
       </div>',
       showMore: showMoreBtnAuto,
     },
     {
       type: 'smallItem',
-      label: '加入資訊社',
+      label: '<h4>10月<h4>',
       shortContent: '\
         <div class="col s12 center"> \
-          <img class="timeline-photo" src="/static/roll_call/img/pikachu.svg" alt="" /> \
-          <h5>資訊社</h5> \
+          <img class="timeline-photo" src="/static/roll_call/img/torii-gate.svg" alt="" /> \
+          <h5>日本自住遊行講座</h5> \
         </div>',
       fullContent: '\
         <div class="col s12 center"> \
-          <img class="timeline-photo" src="/static/roll_call/img/pikachu.svg" alt="" /> \
-          <h5>資訊社</h5> \
-          <p>資訊社對我意義重大</p> \
-          <p>在許多學長的教導下我才能夠踏入資訊的領域</p> \
+          <img class="timeline-photo" src="/static/roll_call/img/torii-gate.svg" alt="" /> \
+          <h5>日本自住遊行講座</h5> \
+          <p>等等填</p> \
+          <p></p> \
         </div>',
       showMore: showMoreBtn,
       showLess: showLessBtn,
@@ -46,16 +47,16 @@ $(function() {
     },
     {
       type: 'smallItem',
-      label: '加入學生會資訊部',
+      label: '<h4>11月<h4>',
       shortContent: '\
         <div class="col s12 center"> \
-          <img class="timeline-photo" src="img/nchusg.jpg" alt="" /> \
-          <h5>學生會資訊部</h5> \
+          <img class="timeline-photo" src="/static/roll_call/img/paint-palette.svg" alt="" /> \
+          <h5>插畫人生講座</h5> \
         </div>',
       fullContent: '\
         <div class="col s12 center"> \
-          <img class="timeline-photo" src="img/nchusg.jpg" alt="" /> \
-          <h5>學生會資訊部</h5> \
+          <img class="timeline-photo" src="/static/roll_call/img/paint-palette.svg" alt="" /> \
+          <h5>插畫人生講座</h5> \
           <p>因為學生會的宗旨就是<span  class="deep-orange-text">服務學生</span></p> \
           <p>所以我開始有許多新的目標和發想</p> \
           <p>並開始著手寫code 架設一個又一個的服務</p> \
@@ -68,16 +69,16 @@ $(function() {
     },
     {
       type: 'smallItem',
-      label: 'SITCON會眾',
+      label: '<h4>9~11月<h4>',
       shortContent: '\
         <div class="col s12 center"> \
-          <img class="timeline-photo" src="img/sitconLogo.png" alt="" /> \
-          <h5>第一次參加資訊屆的研討會~</h5> \
+          <img class="timeline-photo" src="/static/roll_call/img/cinema.svg" alt="" /> \
+          <h5>電影欣賞講座</h5> \
         </div>',
       fullContent: '\
         <div class="col s12 center"> \
-          <img class="timeline-photo" src="img/sitconLogo.png" alt="" /> \
-          <h5>SITCON會眾</h5> \
+          <img class="timeline-photo" src="/static/roll_call/img/cinema.svg" alt="" /> \
+          <h5>電影欣賞講座</h5> \
           <p>第一次參加資訊屆的研討會</p> \
           <p>雖然有很多內容都無法理解</p> \
           <p>但那種大家聚在一起開發<span class="deep-orange-text">open source</span>程式</p> \
@@ -93,24 +94,17 @@ $(function() {
     },
     {
       type: 'smallItem',
-      label: '選課小幫手誕生',
+      label: '<h4>12月<h4>',
       shortContent: '\
         <div class="col s12 center"> \
-          <img class="timeline-photo" src="img/Course/2.png" alt="" /> \
-          <h5>選課小幫手誕生</h5> \
+          <img class="timeline-photo" src="/static/roll_call/img/cupcake.svg" alt="" /> \
+          <h5>手工甜點與幸福的對話</h5> \
         </div>',
       fullContent: '\
         <div class="col s12 center"> \
-          <img class="timeline-photo" src="img/Course/2.png" alt="" /> \
-          <h5>選課小幫手誕生</h5> \
-          <p>在兩位強大學長<a href="http://pastleo.me/" target="_blank">邱冠喻(PastLeo)</a>、<a href="http://taichunmin.idv.tw/" target="_blank">戴均民</a>的教學下</p> \
-          <p>我和其他三名隊友合力完成起初看似不可能的任務</p> \
-          <p>我也從一張白紙</p> \
-          <p>變成會寫JQuery, Python的Crawler</p> \
-          <p>隨著大二教到linux</p> \
-          <p>我也把他從github轉移到學生會的<span  class="deep-orange-text">server</span></p> \
-          <p>再寫一些自動更新課程資料的shell script</p> \
-          <p>這段時間真是受不少貴人的幫忙才能完成阿</p> \
+          <img class="timeline-photo" src="/static/roll_call/img/cupcake.svg" alt="" /> \
+          <h5>手工甜點與幸福的對話</h5> \
+          <p>QQ</p> \
         </div>',
       showMore: showMoreBtn,
       showLess: showLessBtn,
@@ -118,39 +112,105 @@ $(function() {
     },
     {
       type: 'smallItem',
-      label: 'COSCUP會眾',
+      label: '<h4>12月<h4>',
+      shortContent: '\
+      <div class="col s12 center"> \
+      <img class="timeline-photo" src="/static/roll_call/img/fireplace.svg" alt="" /> \
+      <h5>冬季送暖</h5> \
+      </div>',
+      fullContent: '\
+      <div class="col s12 center"> \
+      <img class="timeline-photo" src="/static/roll_call/img/fireplace.svg" alt="" /> \
+      <h5>冬季送暖</h5> \
+      <p>QQ</p> \
+      </div>',
+      showMore: showMoreBtn,
+      showLess: showLessBtn,
+    },
+    {
+      type: 'smallItem',
+      label: '<h4>3月<h4>',
       shortContent: '\
         <div class="col s12 center"> \
-          <img class="timeline-photo" src="img/nchuit_coscup.jpg" alt="" /> \
-          <h5>COSCUP會眾</h5> \
-          <h5>再來見見世面~</h5> \
+          <img class="timeline-photo" src="/static/roll_call/img/heart.svg" alt="" /> \
+          <h5>健康人生</h5> \
         </div>',
       fullContent: '\
         <div class="col s12 center"> \
-          <img class="timeline-photo" src="img/nchuit_coscup.jpg" alt="" /> \
-          <h5>COSCUP會眾</h5> \
-          <p>在這裡遇到一些已經畢業的中興大學長</p> \
-          <p>他們對選課小幫手給的建議讓我受益良多</p> \
-          <p>也見證了台灣一年一度最大的的資訊盛會</p> \
+          <img class="timeline-photo" src="/static/roll_call/img/heart.svg" alt="" /> \
+          <h5>健康人生</h5> \
+          <p>QQ</p> \
         </div>',
       showMore: showMoreBtn,
       showLess: showLessBtn,
-    },    
+    },
     {
-      type: 'bigItem',
-      label: '<span class="grey lighten-3">Now</span>',
-      shortContent: ' \
+      type: 'smallItem',
+      label: '<h4>4月<h4>',
+      shortContent: '\
+        <div class="col s12 center"> \
+          <img class="timeline-photo" src="/static/roll_call/img/cooker.svg" alt="" /> \
+          <h5>型男講座 - 型男大主廚</h5> \
+        </div>',
+      fullContent: '\
+        <div class="col s12 center"> \
+          <img class="timeline-photo" src="/static/roll_call/img/cooker.svg" alt="" /> \
+          <h5>型男講座 - 型男大主廚</h5> \
+          <p>QQ</p> \
+        </div>',
+      showMore: showMoreBtn,
+      showLess: showLessBtn,
+    },
+    {
+      type: 'smallItem',
+      label: '<h4>5月<h4>',
+      shortContent: '\
       <div class="col s12 center"> \
-        <img class="legonow" src="img/skate.jpg" alt="" /> \
+      <img class="timeline-photo" src="/static/roll_call/img/muscle.svg" alt="" /> \
+      <h5>型男講座 - 運動講座</h5> \
       </div>',
       fullContent: '\
       <div class="col s12 center"> \
-        <img class="legonow" src="img/skate.jpg" alt="" /> \
-        <h6>所以 現在的我呢?</h6> \
-        <h5><span class="deep-orange-text">莫忘初衷</span>繼續前進吧！</h5> \
+      <img class="timeline-photo" src="/static/roll_call/img/muscle.svg" alt="" /> \
+      <h5>型男講座 - 運動講座</h5> \
+      <p>QQ</p> \
       </div>',
-      showMore: showMoreBtnAuto,
+      showMore: showMoreBtn,
+      showLess: showLessBtn,
+      forcePosition: 'right'
     },
+    {
+      type: 'bigItem',
+      label: '<h4><span class="grey lighten-3">服委招募</span></h4>',
+      shortContent: '\
+      <div class="col s12 center"> \
+      <img class="timeline-photo" src="/static/roll_call/img/muscular-man-flexing-silhouette.svg" alt="" /> \
+      <h5>服委招募</h5> \
+      </div>',
+      fullContent: '\
+      <div class="col s12 center"> \
+      <img class="timeline-photo" src="/static/roll_call/img/muscular-man-flexing-silhouette.svg" alt="" /> \
+      <h5>服委招募</h5> \
+      <p>QQ</p> \
+      </div>',
+      showMore: showMoreBtn,
+      showLess: showLessBtn,
+    }
+    // {
+    //   type: 'bigItem',
+    //   label: '<h4><span class="grey lighten-3">服委招募</span></h4>',
+    //   shortContent: ' \
+    //   <div class="col s12 center"> \
+    //     <img class="legonow" src="/static/roll_call/img/muscular-man-flexing-silhouette.svg" alt="" /> \
+    //   </div>',
+    //   fullContent: '\
+    //   <div class="col s12 center"> \
+    //     <img class="legonow" src="/static/roll_call/img/muscular-man-flexing-silhouette.svg" alt="" /> \
+    //     <h6>所以 現在的我呢?</h6> \
+    //     <h5><span class="deep-orange-text">莫忘初衷</span>繼續前進吧！</h5> \
+    //   </div>',
+    //   showMore: showMoreBtnAuto,
+    // },
   ]
   });
 });
