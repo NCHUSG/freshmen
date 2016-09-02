@@ -38,8 +38,7 @@ $(function() {
         <div class="col s12 center"> \
           <img class="timeline-photo" src="/static/roll_call/img/torii-gate.svg" alt="" /> \
           <h5>日本自住遊行講座</h5> \
-          <p>等等填</p> \
-          <p></p> \
+          <p>會有專人與您介紹該行程的注意事項以及費用</p> \
         </div>',
       showMore: showMoreBtn,
       showLess: showLessBtn,
@@ -60,11 +59,9 @@ $(function() {
         <div class="col s12 center"> \
           <img class="timeline-photo" src="/static/roll_call/img/paint-palette.svg" alt="" /> \
           <h5>插畫人生講座</h5> \
-          <p>因為學生會的宗旨就是<span  class="deep-orange-text">服務學生</span></p> \
-          <p>所以我開始有許多新的目標和發想</p> \
-          <p>並開始著手寫code 架設一個又一個的服務</p> \
-          <p>也在很多<span class="deep-orange-text">超強的大學長們</span>的教導下</p> \
-          <p>少走了很多冤望路</p> \
+          <p>專業的講師特地到男宿開課</p> \
+          <p>感覺全身的藝術細胞都沸騰了嗎?</p> \
+          <p>快來報名吧~</p> \
         </div>',
       showMore: showMoreBtn,
       showLess: showLessBtn,
@@ -82,11 +79,9 @@ $(function() {
         <div class="col s12 center"> \
           <img class="timeline-photo" src="/static/roll_call/img/cinema.svg" alt="" /> \
           <h5>電影欣賞講座</h5> \
-          <p>第一次參加資訊屆的研討會</p> \
-          <p>雖然有很多內容都無法理解</p> \
-          <p>但那種大家聚在一起開發<span class="deep-orange-text">open source</span>程式</p> \
-          <p>為大家服務的感覺讓我覺得寫程式真的是一件很酷的事</p> \
-          <p>期望能為<span class="deep-orange-text">開源社群</span>做些什麼</p> \
+          <p>我們會精心挑選近期的熱門電影</p> \
+          <p>並且準備點心及飲料供大家享用</p> \
+          <p>快點左右鄰居揪一揪  一起來看電影拉~</p> \
         </div>',
       showMore: showMoreBtn,
       showLess: showLessBtn,
@@ -107,7 +102,9 @@ $(function() {
         <div class="col s12 center"> \
           <img class="timeline-photo" src="/static/roll_call/img/cupcake.svg" alt="" /> \
           <h5>手工甜點與幸福的對話</h5> \
-          <p>QQ</p> \
+          <p>聖誕節到了</p> \
+          <p>想要送禮物給女生卻不知道要送什麼好嗎？</p> \
+          <p>用親手做的甜點溶化美麗佳人的心吧~</p> \
         </div>',
       showMore: showMoreBtn,
       showLess: showLessBtn,
@@ -125,7 +122,10 @@ $(function() {
       <div class="col s12 center"> \
       <img class="timeline-photo" src="/static/roll_call/img/fireplace.svg" alt="" /> \
       <h5>冬季送暖</h5> \
-      <p>QQ</p> \
+      <p>宿舍的水泥床讓你冬天寂寞難耐嗎？</p> \
+      <p>沒有女朋友讓你聖誕節還是一個人嗎？</p> \
+      <p>別怕 今年聖誕節我們陪你過</p> \
+      <p>期待當晚我們的敲門聲吧~</p> \
       </div>',
       showMore: showMoreBtn,
       showLess: showLessBtn,
@@ -142,7 +142,10 @@ $(function() {
         <div class="col s12 center"> \
           <img class="timeline-photo" src="/static/roll_call/img/heart.svg" alt="" /> \
           <h5>健康人生</h5> \
-          <p>QQ</p> \
+          <p>媽媽不在身旁</p> \
+          <p>就不會照顧自己了嗎？</p> \
+          <p>讓我們教你幾招小撇步</p> \
+          <p>把自己照顧的好好的不再讓父母擔心拉~</p> \
         </div>',
       showMore: showMoreBtn,
       showLess: showLessBtn,
@@ -159,7 +162,10 @@ $(function() {
         <div class="col s12 center"> \
           <img class="timeline-photo" src="/static/roll_call/img/cooker.svg" alt="" /> \
           <h5>型男講座 - 型男大主廚</h5> \
-          <p>QQ</p> \
+          <p>每次情人節都送市面上的巧克力</p> \
+          <p>感到厭煩了嗎？</p> \
+          <p>用親手煮的菜</p> \
+          <p>征服女人的味蕾吧~</p> \
         </div>',
       showMore: showMoreBtn,
       showLess: showLessBtn,
@@ -176,7 +182,10 @@ $(function() {
       <div class="col s12 center"> \
       <img class="timeline-photo" src="/static/roll_call/img/muscle.svg" alt="" /> \
       <h5>型男講座 - 運動講座</h5> \
-      <p>QQ</p> \
+      <p>打球卡位總是被撞飛嗎？</p> \
+      <p>閒自己太過單薄沒有安全感嗎？</p> \
+      <p>教你幾招健身技巧</p> \
+      <p>保證讓你脫胎換骨拉~</p> \
       </div>',
       showMore: showMoreBtn,
       showLess: showLessBtn,
@@ -194,26 +203,14 @@ $(function() {
       <div class="col s12 center"> \
       <img class="timeline-photo" src="/static/roll_call/img/muscular-man-flexing-silhouette.svg" alt="" /> \
       <h5>服委招募</h5> \
-      <p>QQ</p> \
+      <p>想要舉辦各種活動嗎？</p> \
+      <p>有滿腔熱血無處揮灑嗎？</p> \
+      <p>想要共同維護這個溫暖的家嗎？</p> \
+      <p>快來加入我們吧~</p> \
       </div>',
       showMore: showMoreBtn,
       showLess: showLessBtn,
     }
-    // {
-    //   type: 'bigItem',
-    //   label: '<h4><span class="grey lighten-3">服委招募</span></h4>',
-    //   shortContent: ' \
-    //   <div class="col s12 center"> \
-    //     <img class="legonow" src="/static/roll_call/img/muscular-man-flexing-silhouette.svg" alt="" /> \
-    //   </div>',
-    //   fullContent: '\
-    //   <div class="col s12 center"> \
-    //     <img class="legonow" src="/static/roll_call/img/muscular-man-flexing-silhouette.svg" alt="" /> \
-    //     <h6>所以 現在的我呢?</h6> \
-    //     <h5><span class="deep-orange-text">莫忘初衷</span>繼續前進吧！</h5> \
-    //   </div>',
-    //   showMore: showMoreBtnAuto,
-    // },
   ]
   });
 });
