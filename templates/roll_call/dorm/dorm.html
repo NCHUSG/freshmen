@@ -12,7 +12,7 @@
 <!-- Page Contents 功能簡介 -->
 <div class="pusher">
 	<div class="ui inverted masthead center aligned segment">
-		{% include "roll_call/base/topBar.html" %}
+		{% include "entry/topBar.html" %}
 
 		{% block entryInfo%}
 		<div class="ui text container">
@@ -36,92 +36,99 @@
 	</section>
 	<!--時間軸模組-->
 	{% block entryContent %}
-
-	<div class="ui grid stackable">
-			<div class="row">
-					<div class="three wide column"></div>
-					<div class="five wide column">
-							<div align="left">
-									<h5>樓長</h5>
-									<div class="ui bulleted list">
-									  <div class="item">每層樓都有一間樓長房，需要幫忙就去敲敲他們的門吧</div>
-									  <div class="item">
-									    <div>服務事項：</div>
-									    <div class="list">
-									      <div class="item">很多生活大小事</div>
-									    </div>
-									  </div>
-										<div class="item">
-											<div>宣導事項：</div>
-											<div class="list">
-												<div class="item">記得申請車證，才可以在宿舍停車喔</div>
-												<div class="item">9/6 早上7：00消防逃生演習</div>
-											</div>
-										</div>
-									</div>
-							</div>
-					</div>
-					<div class="five wide column">
-							<div align="center">
-									<img class="ui small image" src="{% static 'roll_call/img/worker.svg' %}">
-							</div>
-					</div>
-					<div class="three wide column"></div>
-			</div>
-			<div class="row">
-					<div align="center">
-							<img style="visibility:hidden;" class="ui tiny image" src="{% static 'roll_call/GitHub-52.png' %}">
-					</div>
-			</div>
-			<div class="row">
-					<div class="three wide column"></div>
-					<div class="five wide column">
-							<div align="left">
-									<h5>網管</h5>
-									<div class="ui bulleted list">
-									  <div class="item">一群帥氣的 <del>宅男</del> 技術人員</div>
-									  <div class="item">
-									    <div>服務事項：</div>
-									    <div class="list">
-									      <div class="item">解決網路連線問題</div>
-												<div class="item">對違反宿舍規定的住宿生進行斷網處罰</div>
-									    </div>
-									  </div>
-										<div class="item">
-											<div>宣導事項：</div>
-											<div class="list">
-												<div class="item">申請網路步驟：
-													<div class="list">
-														<div class="item">打開瀏覽器輸入：140.120.4.13</div>
-														<div class="item">學號欄位請把第1碼改成英文，大學部改成s 碩班改成g 博班改成d 夜校改成n 在職專搬改成w</div>
-														<div class="item">密碼請輸入：興大單一簽入系統的密碼</div>
-													</div>
-												</div>
-												<div class="item">每天的流量為5G（上傳 + 下載），超流會斷往，並於凌晨12：00恢復</div>
-												<div class="item">禁止使用P2P軟體，如foxy BT彗星等等</div>
-											</div>
-										</div>
-									</div>
-							</div>
-					</div>
-					<div class="five wide column">
+	<section id="skill" class="section">
+		<div class="ui grid stackable">
+				<div class="row">
 						<div align="center">
-							<img class="ui small image" src="{% static 'roll_call/img/employee.svg' %}">
+								<img style="visibility:hidden;" class="ui tiny image" src="{% static 'roll_call/GitHub-52.png' %}">
 						</div>
-					</div>
-					<div class="three wide column"></div>
-			</div>
-			<div class="row">
-					<div align="center">
-							<img style="visibility:hidden;" class="ui tiny image" src="{% static 'roll_call/GitHub-52.png' %}">
-					</div>
-			</div>
-	</div>
-	<div class="row">
-			<div align="center">
-					<img style="visibility:hidden;" class="ui tiny image" src="{% static 'roll_call/GitHub-52.png' %}">
-			</div>
-	</div>
+				</div>
+				<div class="row">
+						<div class="three wide column"></div>
+						<div class="five wide column">
+								<div align="left">
+										<h5>樓長</h5>
+										<div class="ui bulleted list">
+										  <div class="item">每層樓都有一間樓長房，需要幫忙就去敲敲他們的門吧</div>
+										  <div class="item">
+										    <div>服務事項：</div>
+										    <div class="list">
+										      <div class="item">很多生活大小事</div>
+										    </div>
+										  </div>
+											<div class="item">
+												<div>宣導事項：</div>
+												<div class="list">
+													<div class="item">9/5 ~ 9/15 記得申請車證，才可以在宿舍停車喔</div>
+													<div class="item">9/6 早上7：30消防逃生演習</div>
+												</div>
+											</div>
+										</div>
+								</div>
+						</div>
+						<div class="five wide column">
+								<div align="center">
+										<img class="ui small image" src="{% static 'roll_call/img/worker.svg' %}">
+								</div>
+						</div>
+						<div class="three wide column"></div>
+				</div>
+				<div class="row">
+						<div align="center">
+								<img style="visibility:hidden;" class="ui tiny image" src="{% static 'roll_call/GitHub-52.png' %}">
+						</div>
+				</div>
+				<div class="row">
+						<div class="three wide column"></div>
+						<div class="five wide column">
+								<div align="left">
+										<h5>網管</h5>
+										<div class="ui bulleted list">
+										  <div class="item">一群帥氣的 <del>宅男</del> 技術人員</div>
+										  <div class="item">
+										    <div>服務事項：</div>
+										    <div class="list">
+										      <div class="item">解決網路連線問題</div>
+													<div class="item">對違反宿舍規定的住宿生進行斷網處罰</div>
+										    </div>
+										  </div>
+											<div class="item">
+												<div>宣導事項：</div>
+												<div class="list">
+													<div class="item">申請網路步驟：
+														<div class="list">
+															<div class="item">打開瀏覽器輸入：140.120.4.13</div>
+															<div class="item">學號欄位請把第1碼改成英文，大學部改成s 碩班改成g 博班改成d 夜校改成n 在職專搬改成w</div>
+															<div class="item">密碼請輸入：興大單一簽入系統的密碼</div>
+														</div>
+													</div>
+													<div class="item">每天的流量為5G（上傳 + 下載），超流會斷往，並於凌晨12：00恢復</div>
+													<div class="item">禁止使用P2P軟體，如foxy BT彗星等等</div>
+													<div class="item">麻煩於值勤時間尋求網管協助喔~</div>
+												</div>
+											</div>
+										</div>
+								</div>
+						</div>
+						<div class="five wide column">
+							<div align="center">
+								<img class="ui small image" src="{% static 'roll_call/img/employee.svg' %}">
+							</div>
+						</div>
+						<div class="three wide column"></div>
+				</div>
+				<div class="row">
+						<div align="center">
+								<img style="visibility:hidden;" class="ui tiny image" src="{% static 'roll_call/GitHub-52.png' %}">
+						</div>
+				</div>
+		</div>
+		<div class="row">
+				<div align="center">
+						<img style="visibility:hidden;" class="ui tiny image" src="{% static 'roll_call/GitHub-52.png' %}">
+				</div>
+		</div>
+	</section>
 	{% endblock %}
 
 </div>
@@ -129,4 +136,14 @@
 {% block jsblock %}
 <script src="{% static 'roll_call/module/timeline/js/jquery.timelineMe.js' %}"></script>
 <script src="{% static 'roll_call/js/timeline.js' %}"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78099072-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
 {% endblock %}
