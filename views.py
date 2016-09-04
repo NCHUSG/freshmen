@@ -41,7 +41,7 @@ def check(request, key):
 		return render(request, 'roll_call/check/check.html', locals())
 
 	else:
-		RCStuL = RCStu.objects.filter(team=key) 
+		RCStuL = RCStu.objects.filter(team=key).order_by('studentID')
 		team = '第' + RCStuL[0].team
 		userMajor = request.user.major
 		return render(request, 'roll_call/check/checkTeam.html', locals())
@@ -74,7 +74,7 @@ def assignTeam(request, key):
 	if request.GET!='' and 'major' in request.GET:
 		m = request.GET.dict()['major']
 		# print(User._meta.get_all_field_names())
-		u = User.objects.filter(major=m, grade=1)
+		u = User.objects.filter(major=m, grade=1).order_by('email')
 		me = request.user
 		return render(request, 'roll_call/assignTeam/assignTeam.html', locals())
 
